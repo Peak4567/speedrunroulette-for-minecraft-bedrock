@@ -2,7 +2,7 @@
   "format_version": 2,
   "header": {
     "name": "Speedrun Roulette",
-    "description": "§eจัดทำโดย Peak4567 §7| §bSpeedrun Roulette Addon",
+    "description": "§eCreated by Peak4567 §7| §bSpeedrun Roulette Addon",
     "uuid": "dc226d6b-055b-4e24-8e2c-7f76f9b92a99",
     "version": [1, 2, 2],
     "min_engine_version": [1, 20, 0]

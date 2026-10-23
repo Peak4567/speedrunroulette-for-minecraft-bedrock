@@ -159,7 +159,7 @@ const I18N = {
 §7[{value}]",
     btnSuddenDeathSetting: "§c💀 Sudden Death
 §7[{value}]",
-    btnLanguageSetting: "§e🌐 Language / ภาษา
+    btnLanguageSetting: "§e🌐 Language
 §7[{value}]",
 
     dimTitle: "§6🌐 Select Target Dimension",
@@ -194,7 +194,7 @@ const I18N = {
 " +
               "§f• §dAll Difficulties: §7Mix of all difficulty tiers!",
 
-    langTitle: "§6🌐 Select Language / เลือกภาษา",
+    langTitle: "§6🌐 Select Language",
     langBody: "§fCurrent Language: §b{current}
 
 §7Choose your preferred language for menus, broadcasts, and notifications:",
@@ -491,16 +491,16 @@ function getItemDimension(shortId) {
   return "overworld";
 }
 
-// Master Survival Catalog: ครบทุกชิ้นใน Minecraft Survival จริงๆ ยันต้นหญ้า บล็อกไม้ ถ่าน
+// Master Survival Catalog: Comprehensive collection of items obtainable in Minecraft Survival
 const MASTER_SURVIVAL_ITEMS = [
-  // Overworld: หญ้า พืช ดิน ทราย กรวด หิน ไม้ ถ่าน
+  // Overworld: Natural foliage, soil, sand, gravel, stone, wood, coal
   "short_grass", "grass_block", "tall_grass", "fern", "large_fern", "seagrass", "kelp", "dried_kelp", "dried_kelp_block",
   "dirt", "coarse_dirt", "rooted_dirt", "mud", "mud_bricks", "clay", "clay_ball", "sand", "red_sand", "gravel", "flint",
   "stone", "cobblestone", "mossy_cobblestone", "smooth_stone", "granite", "diorite", "andesite",
   "deepslate", "cobbled_deepslate", "polished_deepslate", "deepslate_bricks", "deepslate_tiles", "tuff", "calcite",
   "dripstone_block", "pointed_dripstone", "obsidian",
   
-  // ไม้ทุกชนิด (Log, Wood, Planks, Leaves, Sapling, ประตู, บันได, แผ่นพื้น)
+  // All wood types (Log, Wood, Planks, Leaves, Saplings, Doors, Stairs, Slabs)
   "oak_log", "spruce_log", "birch_log", "jungle_log", "acacia_log", "dark_oak_log", "mangrove_log", "cherry_log", "bamboo_block",
   "stripped_oak_log", "stripped_spruce_log", "stripped_birch_log", "stripped_jungle_log", "stripped_acacia_log", "stripped_dark_oak_log", "stripped_mangrove_log", "stripped_cherry_log",
   "oak_wood", "spruce_wood", "birch_wood", "jungle_wood", "acacia_wood", "dark_oak_wood", "mangrove_wood", "cherry_wood",
@@ -517,7 +517,7 @@ const MASTER_SURVIVAL_ITEMS = [
   "oak_stairs", "spruce_stairs", "birch_stairs", "jungle_stairs", "acacia_stairs", "dark_oak_stairs", "mangrove_stairs", "cherry_stairs", "bamboo_stairs", "stone_stairs", "cobblestone_stairs",
   "oak_slab", "spruce_slab", "birch_slab", "jungle_slab", "acacia_slab", "dark_oak_slab", "mangrove_slab", "cherry_slab", "bamboo_slab", "stone_slab", "cobblestone_slab", "smooth_stone_slab",
 
-  // ถ่าน แร่ และอัญมณี
+  // Coal, Ores, and Gemstones
   "coal", "charcoal", "coal_block", "coal_ore", "deepslate_coal_ore",
   "raw_iron", "iron_ingot", "iron_block", "raw_iron_block", "iron_ore", "deepslate_iron_ore",
   "raw_copper", "copper_ingot", "copper_block", "raw_copper_block", "copper_ore", "deepslate_copper_ore",
@@ -528,11 +528,11 @@ const MASTER_SURVIVAL_ITEMS = [
   "redstone", "redstone_block", "redstone_ore", "deepslate_redstone_ore",
   "amethyst_shard", "amethyst_block",
 
-  // ดอกไม้
+  // Flowers and Botany
   "dandelion", "poppy", "blue_orchid", "allium", "azure_bluet", "red_tulip", "orange_tulip", "white_tulip", "pink_tulip",
   "oxeye_daisy", "cornflower", "lily_of_the_valley", "sunflower", "lilac", "rose_bush", "peony", "torchflower", "pitcher_plant", "wither_rose",
 
-  // การเกษตรและอาหาร
+  // Agriculture, Farming, and Food
   "wheat", "wheat_seeds", "hay_block", "bread",
   "carrot", "golden_carrot", "potato", "baked_potato", "poisonous_potato",
   "beetroot", "beetroot_seeds", "beetroot_soup",
@@ -544,7 +544,7 @@ const MASTER_SURVIVAL_ITEMS = [
   "raw_cod", "cooked_cod", "raw_salmon", "cooked_salmon", "brown_mushroom", "red_mushroom", "mushroom_stew", "rabbit_stew",
   "egg", "milk_bucket",
 
-  // มอนสเตอร์และสัตว์ดรอป
+  // Monster and Animal Drops
   "bone", "bone_meal", "bone_block", "string", "spider_eye", "fermented_spider_eye", "rotten_flesh", "gunpowder", "tnt",
   "feather", "leather", "rabbit_hide", "rabbit_foot", "slime_ball", "slime_block",
   "ender_pearl", "eye_of_ender", "phantom_membrane", "ink_sac", "glow_ink_sac",
@@ -552,7 +552,7 @@ const MASTER_SURVIVAL_ITEMS = [
   "scute", "turtle_helmet", "totem_of_undying", "saddle", "name_tag", "lead",
   "trial_key", "ominous_trial_key", "breeze_rod", "wind_charge", "heavy_core", "mace", "echo_shard",
 
-  // อาวุธ เครื่องมือ ชุดเกราะ
+  // Weapons, Tools, and Armor
   "wooden_sword", "wooden_pickaxe", "wooden_axe", "wooden_shovel", "wooden_hoe",
   "stone_sword", "stone_pickaxe", "stone_axe", "stone_shovel", "stone_hoe",
   "iron_sword", "iron_pickaxe", "iron_axe", "iron_shovel", "iron_hoe", "iron_helmet", "iron_chestplate", "iron_leggings", "iron_boots",
@@ -560,7 +560,7 @@ const MASTER_SURVIVAL_ITEMS = [
   "diamond_sword", "diamond_pickaxe", "diamond_axe", "diamond_shovel", "diamond_hoe", "diamond_helmet", "diamond_chestplate", "diamond_leggings", "diamond_boots",
   "shield", "bow", "crossbow", "arrow", "fishing_rod", "shears", "flint_and_steel", "spyglass",
 
-  // บล็อกทำงาน เฟอร์นิเจอร์ เรดสโตน
+  // Utility Blocks, Furniture, and Redstone
   "crafting_table", "furnace", "smoker", "blast_furnace", "campfire", "soul_campfire",
   "chest", "barrel", "trapped_chest", "ender_chest", "anvil", "grindstone", "smithing_table", "cartography_table", "fletching_table", "loom", "stonecutter",
   "brewing_stand", "cauldron", "hopper", "dispenser", "dropper", "observer",
@@ -625,7 +625,7 @@ function buildItemPool() {
     console.warn(`[Speedrun Roulette] ItemTypes.getAll error: ${e}`);
   }
 
-  // 2. Ensure ALL items in MASTER_SURVIVAL_ITEMS are guaranteed to be present (หญ้า, ไม้, ถ่าน ฯลฯ)
+  // 2. Ensure ALL items in MASTER_SURVIVAL_ITEMS are guaranteed to be present
   for (const shortId of MASTER_SURVIVAL_ITEMS) {
     const fullId = `minecraft:${shortId}`;
     if (!seen.has(fullId)) {
@@ -653,17 +653,17 @@ console.warn(`[Speedrun Roulette] Loaded ${ITEM_POOL.length} possible objectives
 // ---------------------------------------------------------------
 const state = {
   // Configurable Settings
-  language: "en",          // "en" (English - Default) | "th" (ภาษาไทย)
-  mode: "countdown",       // "countdown" (นับถอยหลัง ถ้าหมดเวลาคือตาย) or "countup" (นับไปเรื่อยๆ)
-  totalRounds: 10,         // Number of rounds: 1, 3, 5, 10... or 0 for unlimited (ไม่จำกัด)
+  language: "en",          // "en" (English - Default) | "th" (Thai)
+  mode: "countdown",       // "countdown" (Time limited) or "countup" (Stopwatch)
+  totalRounds: 10,         // Number of rounds: 1, 3, 5, 10... or 0 for unlimited
   currentRound: 1,         // Current round number (1..totalRounds)
   timeMultiplier: 1.0,     // Time multiplier for countdown mode
-  timeMode: "normal",      // "day" (เช้าตลอด) | "night" (กลางคืนตลอด) | "normal" (เวลาปกติ)
+  timeMode: "normal",      // "day" | "night" | "normal"
   difficulty: "normal",    // "peaceful" | "easy" | "normal" | "hard"
-  targetDimension: "all",  // "all" (รวมทุกมิติ) | "overworld" (โลกปกติ) | "nether" (นรก) | "the_end" (มิติมังกร)
-  targetItemDifficulty: "all", // "all" (รวมทุกระดับ) | 1 (ง่ายมาก) | 2 (ง่าย) | 3 (กลาง) | 4 (ยาก) | 5 (ยากมาก)
+  targetDimension: "all",  // "all" | "overworld" | "nether" | "the_end"
+  targetItemDifficulty: "all", // "all" | 1 (Very Easy) | 2 (Easy) | 3 (Medium) | 4 (Hard) | 5 (Extreme)
   currentRoundWorld: null,     // { x: number, z: number, dimensionName: string }
-  suddenDeath: false,      // true: โหมดครั้งเดียวตาย (ตายแล้วกลายเป็น Spectator เฝ้าดูเพื่อน)
+  suddenDeath: false,      // true: Elimination mode (Spectator on death)
   aliveSuddenDeathPlayers: new Set(), // Set of player IDs currently alive in sudden death mode
   scores: new Map(),       // playerId -> { name: string, wins: number, deaths: number }
   roundDeaths: new Map(),  // playerId -> deaths in current round
@@ -885,7 +885,7 @@ function restoreSpectators(announce = false) {
     } catch (e) {}
   }
   if (announce && state.suddenDeath && count > 0) {
-    world.sendMessage("§a[Speedrun Roulette] จบรอบแล้ว! ผู้เล่นทุกคนกลับสู่โหมด Survival");
+    world.sendMessage(isEn ? "§a[Speedrun Roulette] Round ended! All players returned to Survival mode." : "§a[Speedrun Roulette] จบรอบแล้ว! ผู้เล่นทุกคนกลับสู่โหมด Survival");
   }
 }
 
@@ -964,39 +964,7 @@ function teleportAllToWorldSpawn() {
   }
 }
 
-function getTimeModeName(mode) {
-  switch (mode) {
-    case "day": return "☀️ เช้าตลอด (Always Day)";
-    case "night": return "🌙 กลางคืนตลอด (Always Night)";
-    case "normal":
-    default:
-      return "⏳ เวลาปกติ (Normal Cycle)";
-  }
-}
-
-function getDifficultyName(diff) {
-  switch (diff) {
-    case "peaceful": return "🕊 สงบสุข (Peaceful)";
-    case "easy": return "🟢 ง่าย (Easy)";
-    case "normal": return "🟡 ปานกลาง (Normal)";
-    case "hard": return "🔴 ยาก (Hard)";
-    default:
-      return "🟡 ปานกลาง (Normal)";
-  }
-}
-
-const TIME_OPTIONS = [
-  { value: "day", label: "☀️ กลางวันตลอด (Always Day)", desc: "แดดส่องสว่างตลอดการแข่งขัน" },
-  { value: "night", label: "🌙 กลางคืนตลอด (Always Night)", desc: "มืดตลอดเวลา ท้าทายยิ่งขึ้น" },
-  { value: "normal", label: "⏳ เวลาปกติ (Normal Cycle)", desc: "กลางวันและกลางคืนหมุนเวียนตามธรรมชาติ" },
-];
-
-const DIFFICULTY_OPTIONS = [
-  { value: "peaceful", label: "🕊 สงบสุข (Peaceful)", desc: "ไม่มีมอนสเตอร์เกิด เลือดฟื้นฟูเอง" },
-  { value: "easy", label: "🟢 ง่าย (Easy)", desc: "มอนสเตอร์ตีเบา ไม่มีสถานะอันตราย" },
-  { value: "normal", label: "🟡 ปานกลาง (Normal)", desc: "ระดับความยากมาตรฐานของ Minecraft" },
-  { value: "hard", label: "🔴 ยาก (Hard)", desc: "มอนสเตอร์โจมตีรุนแรงและเกิดเยอะ" },
-];
+// (Duplicate getTimeModeName & getDifficultyName removed in favor of dual-language versions)
 
 // ---------------------------------------------------------------
 // TOP 1-3 RANKING / LEADERBOARD SYSTEM
@@ -1021,6 +989,7 @@ function getTopRankings(limit = 3) {
 }
 
 function displayTopRankings(target = null) {
+  const isEn = !state || state.language !== "th";
   const topList = getTopRankings(3);
   const send = (msg) => {
     if (target) target.sendMessage(msg);
@@ -1028,19 +997,23 @@ function displayTopRankings(target = null) {
   };
 
   send("§6╔════════════════════════════════════════╗");
-  send("§6║      ★ อันดับผู้ชนะสูงสุด TOP 1 - 3 ★       ║");
-  send("§6║           §dจัดทำโดย Peak4567§6            ║");
+  send(isEn ? "§6║      ★ TOP 1 - 3 LEADERBOARD ★       ║" : "§6║      ★ อันดับผู้ชนะสูงสุด TOP 1 - 3 ★       ║");
+  send(isEn ? "§6║           §dCreated by Peak4567§6            ║" : "§6║           §dจัดทำโดย Peak4567§6            ║");
   send("§6╠════════════════════════════════════════╣");
 
-  const medals = ["§6🥇 อันดับ 1", "§f🥈 อันดับ 2", "§c🥉 อันดับ 3"];
+  const medals = isEn ? ["§6🥇 1st Place", "§f🥈 2nd Place", "§c🥉 3rd Place"] : ["§6🥇 อันดับ 1", "§f🥈 อันดับ 2", "§c🥉 อันดับ 3"];
   for (let i = 0; i < 3; i++) {
     const entry = topList[i];
     if (entry && (entry.wins > 0 || (entry.deaths || 0) > 0)) {
-      send(`§f  ${medals[i]}: §e§l${entry.name}§r §f- ชนะ §a${entry.wins}§f ตา §7| ตาย §c${entry.deaths || 0}§7 ครั้ง`);
+      send(isEn
+        ? `§f  ${medals[i]}: §e§l${entry.name}§r §f- Won §a${entry.wins}§f rounds §7| Deaths: §c${entry.deaths || 0}§7`
+        : `§f  ${medals[i]}: §e§l${entry.name}§r §f- ชนะ §a${entry.wins}§f ตา §7| ตาย §c${entry.deaths || 0}§7 ครั้ง`);
     } else if (entry) {
-      send(`§f  ${medals[i]}: §7${entry.name} §8(ชนะ 0 ตา | ตาย 0 ครั้ง)`);
+      send(isEn
+        ? `§f  ${medals[i]}: §7${entry.name} §8(0 wins | 0 deaths)`
+        : `§f  ${medals[i]}: §7${entry.name} §8(ชนะ 0 ตา | ตาย 0 ครั้ง)`);
     } else {
-      send(`§f  ${medals[i]}: §7- ว่าง -`);
+      send(`§f  ${medals[i]}: §7- ${isEn ? "Empty" : "ว่าง"} -`);
     }
   }
   send("§6╚════════════════════════════════════════╝");
@@ -1056,8 +1029,8 @@ function getRoundTargetDimension() {
 }
 
 function generateNewWorldCoordinates(roundNum) {
-  // สุ่มพื้นที่โลกใหม่ในแต่ละตา โดยใช้ระยะห่างและมุมองศาการกระจายตัวแบบเกลียวทอง (Golden Spiral)
-  // แต่ละตาจะอยู่ห่างจากจุดเดิมหลายหมื่นบล็อก พื้นที่ 100% สดใหม่ ต้นไม้ แร่ โครงสร้าง ไบโอมใหม่ ไม่ซ้ำจุดเดิมแน่นอน
+  // Generate new world coordinates each round using golden spiral dispersal
+  // Ensures each round starts tens of thousands of blocks away in untouched terrain
   const baseDistance = 30000 + (roundNum * 20000) + Math.floor(Math.random() * 25000);
   const goldenAngle = (roundNum * 137.507764 * Math.PI) / 180 + (Math.random() - 0.5) * 0.4;
   
@@ -1071,11 +1044,11 @@ function teleportPlayersToRandomLocation(players) {
   const targetDimension = getRoundTargetDimension();
   const dimId = targetDimension.id || "minecraft:overworld";
 
-  // สุ่มพิกัดโลกใหม่เฉพาะของตานี้
+  // Pick unique world coordinates for this round
   const { x: baseX, z: baseZ } = generateNewWorldCoordinates(state.currentRound || 1);
   state.currentRoundWorld = { x: baseX, z: baseZ, dimensionName: dimId };
 
-  // รีเซ็ตสภาพแวดล้อมให้เป็นโลกใหม่: ตอนเช้าตรู่ และอากาศแจ่มใส
+  // Reset environment to fresh world: early morning and clear weather
   try {
     targetDimension.runCommand("time set 0");
     targetDimension.runCommand("weather clear");
@@ -1107,7 +1080,7 @@ function teleportPlayersToRandomLocation(players) {
       p.runCommandAsync("camera @s fade time 0.3 3.5 0.5 color 10 10 15");
     } catch (e) {}
 
-    // คำนวณความสูงที่ปลอดภัย
+    // Calculate safe surface height
     let safeY = 120;
     try {
       if (typeof targetDimension.getTopmostBlock === "function") {
@@ -1129,7 +1102,7 @@ function teleportPlayersToRandomLocation(players) {
       } catch (err) {}
     }
 
-    // spreadplayers ช่วยนำผู้เล่นลงสู่พื้นผิวธรรมชาติอย่างปลอดภัยและยุติธรรม
+    // spreadplayers brings players safely and fairly to the natural surface
     try {
       p.runCommandAsync(`spreadplayers ${targetX} ${targetZ} 2 15 @s`);
     } catch (e) {}
@@ -1154,7 +1127,7 @@ function teleportSinglePlayerToRandomLocation(p) {
   if (!p) return;
   const targetDimension = getRoundTargetDimension();
 
-  // เกิดใหม่ในอาณาบริเวณของโลกใหม่ตานี้ (ไม่หลุดไปไกลเป็นหมื่นบล็อก)
+  // Respawn within this round's designated world boundaries
   let targetX = Math.floor((Math.random() - 0.5) * 6000);
   let targetZ = Math.floor((Math.random() - 0.5) * 6000);
 
@@ -1163,7 +1136,7 @@ function teleportSinglePlayerToRandomLocation(p) {
     targetZ = state.currentRoundWorld.z + Math.floor((Math.random() - 0.5) * 120);
   }
 
-  // ให้ effect ป้องกันความเสียหายขณะเกิดใหม่
+  // Provide spawn protection effects upon respawning
   try {
     p.addEffect("resistance", 400, { amplifier: 255, showParticles: false });
     p.addEffect("fire_resistance", 400, { amplifier: 0, showParticles: false });
@@ -1193,14 +1166,15 @@ function teleportSinglePlayerToRandomLocation(p) {
     } catch (err) {}
   }
 
-  // คำสั่ง spreadplayers ช่วยปรับตำแหน่งลงสู่พื้นดินจริงอย่างปลอดภัย
+  // spreadplayers adjusts position safely to the ground
   try {
     p.runCommandAsync(`spreadplayers ${targetX} ${targetZ} 1 15 @s`);
   } catch (e) {}
 
+  const isEn = !state || state.language !== "th";
   try {
-    p.onScreenDisplay.setTitle("§e🎲 สุ่มเกิดใหม่แล้ว!", {
-      subtitle: `§fสุ่มเกิดใหม่ในโลกนี้เรียบร้อย! (X: ${targetX}, Z: ${targetZ})`,
+    p.onScreenDisplay.setTitle(isEn ? "§e🎲 Respawned!" : "§e🎲 สุ่มเกิดใหม่แล้ว!", {
+      subtitle: isEn ? `§fRespawned safely in this world! (X: ${targetX}, Z: ${targetZ})` : `§fสุ่มเกิดใหม่ในโลกนี้เรียบร้อย! (X: ${targetX}, Z: ${targetZ})`,
       fadeInDuration: 5,
       stayDuration: 40,
       fadeOutDuration: 10,
@@ -1208,7 +1182,9 @@ function teleportSinglePlayerToRandomLocation(p) {
     p.playSound("random.levelup", { pitch: 1.2, volume: 1.0 });
   } catch (e) {}
 
-  p.sendMessage(`§e🎲 [Speedrun Roulette] §fคุณเสียชีวิต! สุ่มเกิดใหม่ในโลกตานี้เรียบร้อยแล้ว §7(X: ${targetX}, Z: ${targetZ})`);
+  p.sendMessage(isEn
+    ? `§e🎲 [Speedrun Roulette] §fYou died! Respawned safely in this round's world §7(X: ${targetX}, Z: ${targetZ})`
+    : `§e🎲 [Speedrun Roulette] §fคุณเสียชีวิต! สุ่มเกิดใหม่ในโลกตานี้เรียบร้อยแล้ว §7(X: ${targetX}, Z: ${targetZ})`);
 }
 
 // ---------------------------------------------------------------
@@ -1216,7 +1192,7 @@ function teleportSinglePlayerToRandomLocation(p) {
 // ---------------------------------------------------------------
 function clearPlayerInventoryAndEffects(p) {
   if (!p) return;
-  // ล้างกระเป๋าหลัก (inventory container)
+  // Clear main inventory container
   try {
     const inv = p.getComponent("minecraft:inventory");
     if (inv && inv.container) {
@@ -1224,7 +1200,7 @@ function clearPlayerInventoryAndEffects(p) {
     }
   } catch (e) {}
 
-  // ล้างชุดเกราะและมือซ้าย (armor & offhand)
+  // Clear armor slots and offhand
   try {
     const equip = p.getComponent("minecraft:equippable");
     if (equip) {
@@ -1234,7 +1210,7 @@ function clearPlayerInventoryAndEffects(p) {
     }
   } catch (e) {}
 
-  // คำสั่งสำรองเพื่อให้มั่นใจว่าล้างหมดจด
+  // Secondary cleanup command to guarantee complete inventory clear
   try { p.runCommandAsync("clear @s"); } catch (e) {}
   try { p.runCommandAsync("effect @s clear"); } catch (e) {}
 }
@@ -1247,7 +1223,8 @@ const SPIN_STEPS = [1, 1, 1, 2, 2, 2, 3, 3, 4, 4, 5, 6, 8, 10, 13, 17, 22];
 function spinAndStart(initiator = null) {
   if (state.roundState === "spinning" || state.roundState === "countdown321") {
     if (initiator) {
-      initiator.sendMessage("§c[Speedrun Roulette] กำลังสุ่มหรือนับถอยหลังอยู่ กรุณารอสักครู่!");
+      const isEn = !state || state.language !== "th";
+      initiator.sendMessage(isEn ? "§c[Speedrun Roulette] Already rolling or counting down, please wait!" : "§c[Speedrun Roulette] กำลังสุ่มหรือนับถอยหลังอยู่ กรุณารอสักครู่!");
     }
     return;
   }
@@ -1643,13 +1620,24 @@ function showFinalLeaderboard() {
     const second = topList[1];
     const third = topList[2];
 
-    let subText = `§6🥇 1: ${champ.name} (ชนะ ${champ.wins} ตา | ตาย ${champ.deaths || 0})`;
-    if (second && (second.wins > 0 || (second.deaths || 0) > 0)) subText += `  §f🥈 2: ${second.name} (${second.wins} ตา | ตาย ${second.deaths || 0})`;
-    if (third && (third.wins > 0 || (third.deaths || 0) > 0)) subText += `  §c🥉 3: ${third.name} (${third.wins} ตา | ตาย ${third.deaths || 0})`;
+    const isEn = !state || state.language !== "th";
+    let subText = isEn
+      ? `§6🥇 1st: ${champ.name} (${champ.wins} wins | Deaths: ${champ.deaths || 0})`
+      : `§6🥇 1: ${champ.name} (ชนะ ${champ.wins} ตา | ตาย ${champ.deaths || 0})`;
+    if (second && (second.wins > 0 || (second.deaths || 0) > 0)) {
+      subText += isEn
+        ? `  §f🥈 2nd: ${second.name} (${second.wins} wins | Deaths: ${second.deaths || 0})`
+        : `  §f🥈 2: ${second.name} (${second.wins} ตา | ตาย ${second.deaths || 0})`;
+    }
+    if (third && (third.wins > 0 || (third.deaths || 0) > 0)) {
+      subText += isEn
+        ? `  §c🥉 3rd: ${third.name} (${third.wins} wins | Deaths: ${third.deaths || 0})`
+        : `  §c🥉 3: ${third.name} (${third.wins} ตา | ตาย ${third.deaths || 0})`;
+    }
 
     for (const p of world.getPlayers()) {
       try {
-        p.onScreenDisplay.setTitle("§6★ สรุปผลการแข่งขัน! ★", {
+        p.onScreenDisplay.setTitle(isEn ? "§6★ MATCH CONCLUDED! ★" : "§6★ สรุปผลการแข่งขัน! ★", {
           subtitle: subText,
           fadeInDuration: 10,
           stayDuration: 120,
@@ -1660,8 +1648,9 @@ function showFinalLeaderboard() {
     }
   }
 
-  world.sendMessage("§d[Speedrun Roulette] จัดทำโดย: §e§lPeak4567§r");
-  world.sendMessage("§eพิมพ์ §a!start §eหรือ §a/speedrun:start §eเพื่อเริ่มแมตช์ใหม่!");
+  const isEn = !state || state.language !== "th";
+  world.sendMessage(isEn ? "§d[Speedrun Roulette] Created by: §e§lPeak4567§r" : "§d[Speedrun Roulette] จัดทำโดย: §e§lPeak4567§r");
+  world.sendMessage(isEn ? "§eType §a!start §eor §a/speedrun:start §eto start a new match!" : "§eพิมพ์ §a!start §eหรือ §a/speedrun:start §eเพื่อเริ่มแมตช์ใหม่!");
 
   restoreSpectators(false);
   for (const p of world.getPlayers()) {
@@ -1693,18 +1682,21 @@ function stopRun(initiator = null) {
       p.onScreenDisplay.clearTitle();
       p.onScreenDisplay.setActionBar("");
     } catch (e) {}
-    // ลบของในตัวทั้งหมด รีหัวใจและรีอาหารให้เต็ม
+    // Clear all player inventories, restore full health and hunger
     clearPlayerInventoryAndEffects(p);
     restorePlayerHealthAndHunger(p);
   }
 
   restoreSpectators(false);
-  // ยกเลิกเซฟเตียงและวาร์ปทุกคนกลับจุดแรกของโลก
+  // Reset bed spawnpoint and teleport all players back to initial world spawn
   teleportAllToWorldSpawn();
   applyLobbyEnvironment();
   giveMenuCompassToAll();
 
-  world.sendMessage("§c[Speedrun Roulette] หยุดเกม ลบไอเท็มในตัว รีเลือด/อาหาร ยกเลิกเซฟเตียง และวาร์ปกลับจุดเกิดโลกเรียบร้อยแล้ว");
+  const isEn = !state || state.language !== "th";
+  world.sendMessage(isEn
+    ? "§c[Speedrun Roulette] Match stopped. Items cleared, health/hunger restored, bed spawns cleared, and returned to spawn."
+    : "§c[Speedrun Roulette] หยุดเกม ลบไอเท็มในตัว รีเลือด/อาหาร ยกเลิกเซฟเตียง และวาร์ปกลับจุดเกิดโลกเรียบร้อยแล้ว");
 }
 
 function resetGame(initiator = null) {
@@ -1738,9 +1730,12 @@ function resetGame(initiator = null) {
     restorePlayerHealthAndHunger(p);
     teleportSinglePlayerToWorldSpawn(p);
 
+    const isEn = !state || state.language !== "th";
     try {
       p.onScreenDisplay.setTitle("§c★ RESET ALL ★", {
-        subtitle: "§fล้างของ รีเลือด/อาหาร ยกเลิกเตียง และวาร์ปกลับจุดเกิดโลกแล้ว",
+        subtitle: isEn
+          ? "§fItems cleared, health/hunger restored, beds reset, returned to spawn."
+          : "§fล้างของ รีเลือด/อาหาร ยกเลิกเตียง และวาร์ปกลับจุดเกิดโลกแล้ว",
         fadeInDuration: 5,
         stayDuration: 60,
         fadeOutDuration: 15,
@@ -1753,11 +1748,19 @@ function resetGame(initiator = null) {
     giveMenuCompassToAll();
   }, 5);
 
+  const isEn = !state || state.language !== "th";
   world.sendMessage("§6══════════════════════════════════════════");
-  world.sendMessage("§a[Speedrun Roulette] รีเซ็ตเกมทั้งหมดเรียบร้อยแล้ว!");
-  world.sendMessage("§f• ล้างไอเท็มในตัวของผู้เล่นทุกคน");
-  world.sendMessage(`§f• วาร์ปผู้เล่นทุกคนกลับสู่จุดเกิดแรกของโลก (X: ${spawnLoc.x}, Y: ${spawnLoc.y}, Z: ${spawnLoc.z})`);
-  world.sendMessage("§f• รีเซ็ตคะแนนและตากลับสู่ตาที่ 1 พร้อมเริ่มใหม่!");
+  if (isEn) {
+    world.sendMessage("§a[Speedrun Roulette] Game has been fully reset!");
+    world.sendMessage("§f• Cleared all player inventories and active effects");
+    world.sendMessage(`§f• Teleported all players to initial world spawn (X: ${spawnLoc.x}, Y: ${spawnLoc.y}, Z: ${spawnLoc.z})`);
+    world.sendMessage("§f• Reset all scores and rounds back to Round 1!");
+  } else {
+    world.sendMessage("§a[Speedrun Roulette] รีเซ็ตเกมทั้งหมดเรียบร้อยแล้ว!");
+    world.sendMessage("§f• ล้างไอเท็มในตัวของผู้เล่นทุกคน");
+    world.sendMessage(`§f• วาร์ปผู้เล่นทุกคนกลับสู่จุดเกิดแรกของโลก (X: ${spawnLoc.x}, Y: ${spawnLoc.y}, Z: ${spawnLoc.z})`);
+    world.sendMessage("§f• รีเซ็ตคะแนนและตากลับสู่ตาที่ 1 พร้อมเริ่มใหม่!");
+  }
   world.sendMessage("§6══════════════════════════════════════════");
 }
 
@@ -1765,12 +1768,13 @@ function resetGame(initiator = null) {
 // PAUSE & RESUME GAME CONTROL
 // ---------------------------------------------------------------
 function pauseGame(initiator = null) {
+  const isEn = !state || state.language !== "th";
   if (state.roundState === "paused") {
-    if (initiator) initiator.sendMessage("§e[Speedrun Roulette] เกมหยุดชั่วคราวอยู่แล้ว (พิมพ์ §a!pause §fเพื่อเล่นต่อ)");
+    if (initiator) initiator.sendMessage(isEn ? "§e[Speedrun Roulette] Game is already paused (type §a!pause §fto resume)" : "§e[Speedrun Roulette] เกมหยุดชั่วคราวอยู่แล้ว (พิมพ์ §a!pause §fเพื่อเล่นต่อ)");
     return;
   }
   if (state.roundState !== "running") {
-    if (initiator) initiator.sendMessage("§c[Speedrun Roulette] ไม่สามารถหยุดเกมได้ (เกมไม่ได้กำลังแข่งขันอยู่)");
+    if (initiator) initiator.sendMessage(isEn ? "§c[Speedrun Roulette] Cannot pause (match is not currently running)" : "§c[Speedrun Roulette] ไม่สามารถหยุดเกมได้ (เกมไม่ได้กำลังแข่งขันอยู่)");
     return;
   }
 
@@ -1803,8 +1807,9 @@ function pauseGame(initiator = null) {
 }
 
 function resumeGame(initiator = null) {
+  const isEn = !state || state.language !== "th";
   if (state.roundState !== "paused") {
-    if (initiator) initiator.sendMessage("§c[Speedrun Roulette] เกมไม่ได้ถูกหยุดชั่วคราวอยู่ (พิมพ์ §a!start §fเพื่อเริ่มเกม)");
+    if (initiator) initiator.sendMessage(isEn ? "§c[Speedrun Roulette] Game is not paused (type §a!start §fto begin)" : "§c[Speedrun Roulette] เกมไม่ได้ถูกหยุดชั่วคราวอยู่ (พิมพ์ §a!start §fเพื่อเริ่มเกม)");
     return;
   }
 
@@ -1841,11 +1846,13 @@ function togglePause(initiator = null) {
     resumeGame(initiator);
   } else if (state.roundState === "spinning" || state.roundState === "countdown321") {
     if (initiator) {
-      initiator.sendMessage("§c[Speedrun Roulette] กำลังสุ่มหรือนับถอยหลังอยู่ กรุณารอสักครู่แล้วค่อยหยุดเกม!");
+      const isEn = !state || state.language !== "th";
+      initiator.sendMessage(isEn ? "§c[Speedrun Roulette] Roulette is currently spinning. Please wait before pausing!" : "§c[Speedrun Roulette] กำลังสุ่มหรือนับถอยหลังอยู่ กรุณารอสักครู่แล้วค่อยหยุดเกม!");
     }
   } else {
     if (initiator) {
-      initiator.sendMessage("§e[Speedrun Roulette] §fสามารถหยุดเกมชั่วคราวได้เฉพาะตอนที่กำลังแข่งขันอยู่เท่านั้น (พิมพ์ §a!start §fเพื่อเริ่มเกม)");
+      const isEn = !state || state.language !== "th";
+      initiator.sendMessage(isEn ? "§e[Speedrun Roulette] §fYou can only pause while a match is actively running (type §a!start §fto begin)" : "§e[Speedrun Roulette] §fสามารถหยุดเกมชั่วคราวได้เฉพาะตอนที่กำลังแข่งขันอยู่เท่านั้น (พิมพ์ §a!start §fเพื่อเริ่มเกม)");
     }
   }
 }
@@ -2664,6 +2671,7 @@ function showHelp(player) {
 // COMMAND DISPATCHER
 // ---------------------------------------------------------------
 function handleCommand(cmd, args, player) {
+  const isEn = !state || state.language !== "th";
   switch (cmd) {
     case "menu":
     case "ui":
@@ -2702,7 +2710,7 @@ function handleCommand(cmd, args, player) {
 
     case "reroll":
       if (state.roundState === "spinning" || state.roundState === "countdown321") {
-        player.sendMessage("§c[Speedrun Roulette] กำลังสุ่มอยู่ กรุณารอสักครู่!");
+        player.sendMessage(isEn ? "§c[Speedrun Roulette] Already rolling or counting down, please wait!" : "§c[Speedrun Roulette] กำลังสุ่มอยู่ กรุณารอสักครู่!");
         return;
       }
       spinAndStart(player);
@@ -2731,15 +2739,21 @@ function handleCommand(cmd, args, player) {
       const arg = (args[0] || "").toLowerCase().trim();
       if (arg === "countdown" || arg === "cd" || arg === "down") {
         state.mode = "countdown";
-        world.sendMessage("§e[Speedrun Roulette] §fเปลี่ยนโหมดเวลาเป็น: §c⏳ นับถอยหลัง (ถ้าหมดเวลาคือตาย!)");
+        world.sendMessage(isEn
+          ? "§e[Speedrun Roulette] §fTimer mode set to: §c⏳ Countdown (Fail if time runs out!)"
+          : "§e[Speedrun Roulette] §fเปลี่ยนโหมดเวลาเป็น: §c⏳ นับถอยหลัง (ถ้าหมดเวลาคือตาย!)");
       } else if (arg === "countup" || arg === "up" || arg === "normal") {
         state.mode = "countup";
-        world.sendMessage("§e[Speedrun Roulette] §fเปลี่ยนโหมดเวลาเป็น: §a⏱ นับไปข้างหน้าเรื่อยๆ (ไม่จำกัดเวลา)");
+        world.sendMessage(isEn
+          ? "§e[Speedrun Roulette] §fTimer mode set to: §a⏱ Count-up (Unlimited time)"
+          : "§e[Speedrun Roulette] §fเปลี่ยนโหมดเวลาเป็น: §a⏱ นับไปข้างหน้าเรื่อยๆ (ไม่จำกัดเวลา)");
       } else {
         // Toggle if no arg
         state.mode = state.mode === "countdown" ? "countup" : "countdown";
-        const newStr = state.mode === "countdown" ? "§c⏳ นับถอยหลัง (มีเวลาจำกัดตามไอเท็ม)" : "§a⏱ นับไปข้างหน้าเรื่อยๆ";
-        world.sendMessage(`§e[Speedrun Roulette] §fสลับโหมดเวลาเป็น: ${newStr}`);
+        const newStr = state.mode === "countdown"
+          ? (isEn ? "§c⏳ Countdown (Time limit per item)" : "§c⏳ นับถอยหลัง (มีเวลาจำกัดตามไอเท็ม)")
+          : (isEn ? "§a⏱ Count-up (Unlimited time)" : "§a⏱ นับไปข้างหน้าเรื่อยๆ");
+        world.sendMessage(isEn ? `§e[Speedrun Roulette] §fSwitched timer mode to: ${newStr}` : `§e[Speedrun Roulette] §fสลับโหมดเวลาเป็น: ${newStr}`);
       }
       break;
     }
@@ -2748,35 +2762,45 @@ function handleCommand(cmd, args, player) {
     case "round": {
       const arg = (args[0] || "").toLowerCase().trim();
       if (!arg) {
-        player.sendMessage(`§e[Speedrun Roulette] §fจำนวนตาปัจจุบัน: §b${state.totalRounds > 0 ? state.totalRounds + ' ตา' : 'ไม่จำกัด (Unlimited)'}`);
-        player.sendMessage("§7ตัวเลือกเลขคู่แนะนำ: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20... ถึง 100 หรือ inf");
-        player.sendMessage("§7วิธีใช้: /speedrun:rounds <ตัวเลข> หรือ !rounds <ตัวเลข>");
+        player.sendMessage(isEn
+          ? `§e[Speedrun Roulette] §fCurrent match rounds: §b${state.totalRounds > 0 ? state.totalRounds + ' rounds' : 'Unlimited'}`
+          : `§e[Speedrun Roulette] §fจำนวนตาปัจจุบัน: §b${state.totalRounds > 0 ? state.totalRounds + ' ตา' : 'ไม่จำกัด (Unlimited)'}`);
+        player.sendMessage(isEn
+          ? "§7Suggested even numbers: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20... up to 100 or inf"
+          : "§7ตัวเลือกเลขคู่แนะนำ: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20... ถึง 100 หรือ inf");
+        player.sendMessage(isEn
+          ? "§7Usage: /speedrun:rounds <number> or !rounds <number>"
+          : "§7วิธีใช้: /speedrun:rounds <ตัวเลข> หรือ !rounds <ตัวเลข>");
         return;
       }
       if (arg === "inf" || arg === "infinite" || arg === "unlimited" || arg === "0") {
         state.totalRounds = 0;
-        world.sendMessage("§e[Speedrun Roulette] §fตั้งค่าจำนวนตาเป็น: §bไม่จำกัดรอบ (Unlimited)!");
+        world.sendMessage(isEn ? "§e[Speedrun Roulette] §fSet match rounds to: §bUnlimited!" : "§e[Speedrun Roulette] §fตั้งค่าจำนวนตาเป็น: §bไม่จำกัดรอบ (Unlimited)!");
       } else {
         const n = parseInt(arg, 10);
         if (isNaN(n) || n < 1) {
-          player.sendMessage("§c[Speedrun Roulette] กรุณาระบุจำนวนตาเป็นตัวเลข (เช่น 2, 4, 6, 8, 10... 100 หรือ inf)");
+          player.sendMessage(isEn ? "§c[Speedrun Roulette] Please specify rounds as a number (e.g. 2, 4, 6, 8, 10... 100 or inf)" : "§c[Speedrun Roulette] กรุณาระบุจำนวนตาเป็นตัวเลข (เช่น 2, 4, 6, 8, 10... 100 หรือ inf)");
           return;
         }
         state.totalRounds = n;
-        world.sendMessage(`§e[Speedrun Roulette] §fตั้งค่าจำนวนตาเป็น: §b${n} ตา§f! (ความคืบหน้า: ตาที่ ${getRoundStr()})`);
+        world.sendMessage(isEn
+          ? `§e[Speedrun Roulette] §fSet match rounds to: §b${n} rounds§f! (Progress: Round ${getRoundStr()})`
+          : `§e[Speedrun Roulette] §fตั้งค่าจำนวนตาเป็น: §b${n} ตา§f! (ความคืบหน้า: ตาที่ ${getRoundStr()})`);
       }
       break;
     }
 
     case "poolsize":
-      player.sendMessage(`§e[Speedrun Roulette] §fมีไอเท็มในระบบทั้งหมด §b${ITEM_POOL.length}§f ชนิด`);
+      player.sendMessage(isEn
+        ? `§e[Speedrun Roulette] §fTotal items in pool: §b${ITEM_POOL.length}§f items`
+        : `§e[Speedrun Roulette] §fมีไอเท็มในระบบทั้งหมด §b${ITEM_POOL.length}§f ชนิด`);
       break;
 
     case "ping":
       player.sendMessage(
         poolLoadError
-          ? `§c[Speedrun Roulette] Script ทำงานอยู่ แต่ใช้ Fallback Pool (${poolLoadError.message}). จำนวน ${ITEM_POOL.length}`
-          : `§a[Speedrun Roulette] Script ทำงานสมบูรณ์! Pool มีไอเท็ม ${ITEM_POOL.length} ชนิด`
+          ? (isEn ? `§c[Speedrun Roulette] Script running with Fallback Pool (${poolLoadError.message}). Count: ${ITEM_POOL.length}` : `§c[Speedrun Roulette] Script ทำงานอยู่ แต่ใช้ Fallback Pool (${poolLoadError.message}). จำนวน ${ITEM_POOL.length}`)
+          : (isEn ? `§a[Speedrun Roulette] Script running perfectly! Pool has ${ITEM_POOL.length} items` : `§a[Speedrun Roulette] Script ทำงานสมบูรณ์! Pool มีไอเท็ม ${ITEM_POOL.length} ชนิด`)
       );
       break;
 
@@ -2785,16 +2809,16 @@ function handleCommand(cmd, args, player) {
       const arg = (args[0] || "").toLowerCase().trim();
       if (arg === "overworld" || arg === "ow" || arg === "world") {
         state.targetDimension = "overworld";
-        world.sendMessage("§e[Speedrun Roulette] §fตั้งค่ามิติเป้าหมายเป็น: §a🌿 โลกปกติ (Overworld Only)");
+        world.sendMessage(isEn ? "§e[Speedrun Roulette] §fTarget dimension set to: §a🌿 Overworld Only" : "§e[Speedrun Roulette] §fตั้งค่ามิติเป้าหมายเป็น: §a🌿 โลกปกติ (Overworld Only)");
       } else if (arg === "nether" || arg === "net" || arg === "hell") {
         state.targetDimension = "nether";
-        world.sendMessage("§e[Speedrun Roulette] §fตั้งค่ามิติเป้าหมายเป็น: §c🔥 นรก (Nether Only)");
+        world.sendMessage(isEn ? "§e[Speedrun Roulette] §fTarget dimension set to: §c🔥 Nether Only" : "§e[Speedrun Roulette] §fตั้งค่ามิติเป้าหมายเป็น: §c🔥 นรก (Nether Only)");
       } else if (arg === "the_end" || arg === "end" || arg === "theend") {
         state.targetDimension = "the_end";
-        world.sendMessage("§e[Speedrun Roulette] §fตั้งค่ามิติเป้าหมายเป็น: §d🌌 มิติมังกร (The End Only)");
+        world.sendMessage(isEn ? "§e[Speedrun Roulette] §fTarget dimension set to: §d🌌 The End Only" : "§e[Speedrun Roulette] §fตั้งค่ามิติเป้าหมายเป็น: §d🌌 มิติมังกร (The End Only)");
       } else if (arg === "all" || arg === "any" || arg === "everything") {
         state.targetDimension = "all";
-        world.sendMessage("§e[Speedrun Roulette] §fตั้งค่ามิติเป้าหมายเป็น: §e🌐 รวมทุกมิติ (All Dimensions)");
+        world.sendMessage(isEn ? "§e[Speedrun Roulette] §fTarget dimension set to: §e🌐 All Dimensions" : "§e[Speedrun Roulette] §fตั้งค่ามิติเป้าหมายเป็น: §e🌐 รวมทุกมิติ (All Dimensions)");
       } else {
         openDimensionMenu(player);
       }
@@ -2814,7 +2838,9 @@ function handleCommand(cmd, args, player) {
         openTimeModeMenu(player);
         return;
       }
-      world.sendMessage(`§e[Speedrun Roulette] §fตั้งค่าเวลาในเกมเป็น: §b${getTimeModeName(state.timeMode)}`);
+      world.sendMessage(isEn
+        ? `§e[Speedrun Roulette] §fWorld time set to: §b${getTimeModeName(state.timeMode)}`
+        : `§e[Speedrun Roulette] §fตั้งค่าเวลาในเกมเป็น: §b${getTimeModeName(state.timeMode)}`);
       if (state.roundState === "running") applyGameEnvironment();
       break;
     }
@@ -2825,29 +2851,29 @@ function handleCommand(cmd, args, player) {
       const arg = (args[0] || "").toLowerCase().trim();
       if (arg === "1" || arg === "veryeasy" || arg === "easyมาก" || arg === "ง่ายมาก") {
         state.targetItemDifficulty = 1;
-        world.sendMessage("§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §a🟢 ง่ายมาก (Very Easy)");
+        world.sendMessage(isEn ? "§e[Speedrun Roulette] §fItem difficulty set to: §a🟢 Very Easy" : "§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §a🟢 ง่ายมาก (Very Easy)");
       } else if (arg === "2" || arg === "easy" || arg === "ง่าย") {
         state.targetItemDifficulty = 2;
-        world.sendMessage("§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §2🟡 ง่าย (Easy)");
+        world.sendMessage(isEn ? "§e[Speedrun Roulette] §fItem difficulty set to: §2🟡 Easy" : "§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §2🟡 ง่าย (Easy)");
       } else if (arg === "3" || arg === "medium" || arg === "normal" || arg === "กลาง" || arg === "ปานกลาง") {
         state.targetItemDifficulty = 3;
-        world.sendMessage("§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §e🟠 กลาง (Medium)");
+        world.sendMessage(isEn ? "§e[Speedrun Roulette] §fItem difficulty set to: §e🟠 Medium" : "§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §e🟠 กลาง (Medium)");
       } else if (arg === "4" || arg === "hard" || arg === "ยาก") {
         state.targetItemDifficulty = 4;
-        world.sendMessage("§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §6🔴 ยาก (Hard)");
+        world.sendMessage(isEn ? "§e[Speedrun Roulette] §fItem difficulty set to: §6🔴 Hard" : "§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §6🔴 ยาก (Hard)");
       } else if (arg === "5" || arg === "extreme" || arg === "veryhard" || arg === "ยากมาก") {
         state.targetItemDifficulty = 5;
-        world.sendMessage("§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §c🟣 ยากมาก (Extreme)");
+        world.sendMessage(isEn ? "§e[Speedrun Roulette] §fItem difficulty set to: §c🟣 Extreme" : "§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §c🟣 ยากมาก (Extreme)");
       } else if (arg === "all" || arg === "any" || arg === "รวม") {
         state.targetItemDifficulty = "all";
-        world.sendMessage("§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §d🎲 รวมทุกระดับ (All)");
+        world.sendMessage(isEn ? "§e[Speedrun Roulette] §fItem difficulty set to: §d🎲 All Difficulties" : "§e[Speedrun Roulette] §fตั้งค่าความยากการหาของเป็น: §d🎲 รวมทุกระดับ (All)");
       } else {
         openItemDifficultyMenu(player);
       }
       break;
     }
 
-        case "lang":
+    case "lang":
     case "language": {
       const arg = (args[0] || "").toLowerCase().trim();
       if (arg === "en" || arg === "eng" || arg === "english") {
@@ -2872,7 +2898,9 @@ function handleCommand(cmd, args, player) {
       }
       if (["peaceful", "easy", "normal", "hard"].includes(arg)) {
         state.difficulty = arg;
-        world.sendMessage(`§e[Speedrun Roulette] §fตั้งค่าความยากมอนสเตอร์เป็น: §b${getDifficultyName(state.difficulty)}`);
+        world.sendMessage(isEn
+          ? `§e[Speedrun Roulette] §fMob difficulty set to: §b${getDifficultyName(state.difficulty)}`
+          : `§e[Speedrun Roulette] §fตั้งค่าความยากมอนสเตอร์เป็น: §b${getDifficultyName(state.difficulty)}`);
         if (state.roundState === "running") applyGameEnvironment();
       } else {
         openDifficultyMenu(player);
@@ -2885,15 +2913,21 @@ function handleCommand(cmd, args, player) {
       state.suddenDeath = !state.suddenDeath;
       world.sendMessage(
         state.suddenDeath
-          ? "§c[Speedrun Roulette] §eเปิดใช้งานโหมดครั้งเดียวตาย (Sudden Death)! §fหากตายจะกลายเป็น Spectator เฝ้าดูเพื่อน"
-          : "§a[Speedrun Roulette] §eปิดโหมดครั้งเดียวตาย! §fผู้เล่นที่ตายจะสามารถเกิดใหม่และหาของต่อได้ปกติ"
+          ? (isEn
+              ? "§c[Speedrun Roulette] §eSudden Death enabled! §fPlayers become Spectators upon death until round ends."
+              : "§c[Speedrun Roulette] §eเปิดใช้งานโหมดครั้งเดียวตาย (Sudden Death)! §fหากตายจะกลายเป็น Spectator เฝ้าดูเพื่อน")
+          : (isEn
+              ? "§a[Speedrun Roulette] §eSudden Death disabled! §fPlayers can respawn and keep searching."
+              : "§a[Speedrun Roulette] §eปิดโหมดครั้งเดียวตาย! §fผู้เล่นที่ตายจะสามารถเกิดใหม่และหาของต่อได้ปกติ")
       );
       break;
     }
 
     case "compass":
       giveMenuCompass(player);
-      player.sendMessage("§a[Speedrun Roulette] มอบเข็มทิศเมนูเกมให้คุณเรียบร้อยแล้ว!");
+      player.sendMessage(isEn
+        ? "§a[Speedrun Roulette] Speedrun Menu Compass given to your inventory!"
+        : "§a[Speedrun Roulette] มอบเข็มทิศเมนูเกมให้คุณเรียบร้อยแล้ว!");
       break;
 
     case "help":
@@ -2945,7 +2979,7 @@ system.beforeEvents.startup.subscribe((event) => {
       {
         ...base,
         name: "speedrun:rounds",
-        description: "กำหนดจำนวนตาที่ต้องการเล่น (เลือกเลขคู่ 2, 4, 6, 8... ถึง 100 หรือ inf)",
+        description: "Set total match rounds (choose 2, 4, 6... to 100 or inf)",
         optionalParameters: [
           {
             name: "speedrun:round_choices",
@@ -2981,7 +3015,7 @@ system.beforeEvents.startup.subscribe((event) => {
       {
         ...base,
         name: "speedrun:mode",
-        description: "ปรับโหมดจับเวลา (countdown หรือ countup)",
+        description: "Set timer mode (countdown or countup)",
         optionalParameters: [
           {
             name: "speedrun:mode_choices",
@@ -3011,20 +3045,20 @@ system.beforeEvents.startup.subscribe((event) => {
   const standardCommands = [
     ["speedrun:lang", "Switch language (English / Thai)"],
     ["speedrun:language", "Switch language (English / Thai)"],
-    ["speedrun:menu", "เปิดเมนูตั้งค่าและควบคุมเกม (GUI)"],
-    ["speedrun:settings", "เปิดเมนูตั้งค่าเกม (GUI)"],
-    ["speedrun:pause", "หยุดเกมชั่วคราว หรือเล่นต่อ (Toggle Pause)"],
-    ["speedrun:resume", "เล่นเกมต่อหลังจากการหยุดชั่วคราว"],
-    ["speedrun:start", "สุ่มเป้าหมายและเริ่มการแข่งขัน"],
-    ["speedrun:reroll", "สุ่มไอเท็มใหม่"],
-    ["speedrun:stop", "ยกเลิกหรือหยุดรอบปัจจุบัน"],
-    ["speedrun:reset", "รีเซ็ตจำนวนตาและคะแนนทั้งหมด"],
-    ["speedrun:status", "ดูการตั้งค่าและคะแนนปัจจุบัน"],
-    ["speedrun:top", "ดูอันดับ 1-3 ผู้ชนะสูงสุด"],
-    ["speedrun:rank", "ดูอันดับ 1-3 ผู้ชนะสูงสุด"],
-    ["speedrun:help", "ดูคู่มือคำสั่งทั้งหมด"],
-    ["speedrun:poolsize", "ดูจำนวนไอเท็มทั้งหมดในระบบ"],
-    ["speedrun:ping", "ตรวจสอบสถานะระบบ"],
+    ["speedrun:menu", "Open GUI menu for settings and controls"],
+    ["speedrun:settings", "Open game settings menu (GUI)"],
+    ["speedrun:pause", "Pause or resume match timer (Toggle Pause)"],
+    ["speedrun:resume", "Resume paused match"],
+    ["speedrun:start", "Spin roulette and start match"],
+    ["speedrun:reroll", "Reroll current target objective"],
+    ["speedrun:stop", "Stop current round and return to spawn"],
+    ["speedrun:reset", "Reset all scores and return to spawn"],
+    ["speedrun:status", "View current match settings and scores"],
+    ["speedrun:top", "View Top 1-3 leaderboard rankings"],
+    ["speedrun:rank", "View Top 1-3 leaderboard rankings"],
+    ["speedrun:help", "View all command guides"],
+    ["speedrun:poolsize", "View total items in pool"],
+    ["speedrun:ping", "Check addon script status"],
   ];
 
   for (const [name, description] of standardCommands) {
@@ -3215,12 +3249,12 @@ system.runInterval(() => {
   if (state.roundState === "paused" && state.activeItem) {
     const item = state.activeItem;
     const iconPrefix = item.icon ? `§6[ §f${item.icon} §6] ` : "";
-    const roundPrefix = `§e[ตา ${getRoundStr()}] `;
+    const isEn = !state || state.language !== "th";
+    const roundPrefix = isEn ? `§e[Round ${getRoundStr()}] ` : `§e[ตา ${getRoundStr()}] `;
     const pausedTimeStr = state.mode === "countdown"
       ? `§c⏳ ${formatTimerTicks(Math.max(0, state.timeLimitTicks - state.pausedElapsedTicks))}`
       : `§f⏱ §e${formatTimerTicks(state.pausedElapsedTicks)}`;
 
-    const isEn = !state || state.language !== "th";
     const pauseHint = isEn ? "type !pause to resume" : "พิมพ์ !pause เพื่อเล่นต่อ";
     const actionbarText = `§c⏸ [PAUSED] ${roundPrefix}${iconPrefix}§b${item.name}  §7|  ${pausedTimeStr}  §7|  §e${pauseHint}`;
     for (const p of world.getPlayers()) {
@@ -3287,7 +3321,7 @@ system.runInterval(() => {
     } catch (e) {}
   }
 
-  // 3. Check for Winner ("ใครหาเจอก่อนคือชนะเลย")
+  // 3. Check for Winner (First to obtain target item wins)
   for (const p of world.getPlayers()) {
     const currentCount = getItemCount(p, item.id);
     const startCount = state.playerStartCounts.get(p.id) || 0;
@@ -3335,7 +3369,7 @@ world.afterEvents.playerSpawn.subscribe((event) => {
   if (event.initialSpawn) {
     if (state.roundState === "idle") {
       applyLobbyEnvironment();
-      // เมื่อเกมยกเลิกหรือยังไม่เริ่ม ถ้าเข้าเกมมาใหม่ ให้วาร์ปกลับจุดเกิดโลก ยกเลิกเตียง และรีเลือด/อาหาร
+      // When game is idle, teleport rejoining players to spawn, cancel bed spawn, and restore health/hunger
       system.runTimeout(() => {
         teleportSinglePlayerToWorldSpawn(p);
         restorePlayerHealthAndHunger(p);
@@ -3343,9 +3377,9 @@ world.afterEvents.playerSpawn.subscribe((event) => {
     }
     p.sendMessage(t("welcomeMessage"));
   } else {
-    // ผู้เล่น Respawn เกิดใหม่หลังจากตาย
+    // Player respawn handling after death
     if ((state.roundState === "running" || state.roundState === "countdown321") && !state.suddenDeath) {
-      // สุ่มเกิดใหม่ไปที่อื่นของแต่ละคนแบบปลอดภัย ไม่กลับไปจุดเกิดโลก
+      // Respawn safely at a new location in the round's world instead of initial spawn
       system.runTimeout(() => {
         teleportSinglePlayerToRandomLocation(p);
       }, 2);
