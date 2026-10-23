@@ -1,0 +1,30 @@
+{
+  "resource_pack_name": "SpeedrunRoulette",
+  "texture_name": "atlas.items",
+  "texture_data": {
+    "speedrun_back": {
+      "textures": "textures/ui/back"
+    },
+    "speedrun_pause": {
+      "textures": "textures/ui/pause"
+    },
+    "speedrun_play": {
+      "textures": "textures/ui/play"
+    },
+    "speedrun_reroll": {
+      "textures": "textures/ui/reroll"
+    },
+    "speedrun_reset": {
+      "textures": "textures/ui/reset"
+    },
+    "speedrun_settings": {
+      "textures": "textures/ui/settings"
+    },
+    "speedrun_stop": {
+      "textures": "textures/ui/stop"
+    },
+    "speedrun_trophy": {
+      "textures": "textures/ui/trophy"
+    }
+  }
+}

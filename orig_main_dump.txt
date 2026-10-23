@@ -1,0 +1,395 @@
+Created At: 2026-10-21T18:56:53+07:00
+Completed At: 2026-10-21T18:56:53+07:00
+File Path: `file:///c:/Users/User/Downloads/MineCraft/extracted_roulette/scripts/main.js`
+Total Lines: 378
+Total Bytes: 13730
+Showing lines 1 to 200
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import {
+2:   world,
+3:   system,
+4:   ItemTypes,
+5:   CommandPermissionLevel,
+6: } from "@minecraft/server";
+7: 
+8: // ---------------------------------------------------------------
+9: // CONFIG: the pool is built automatically from EVERY item/block
+10: // registered in the game (ItemTypes.getAll() includes block items
+11: // like minecraft:stone, minecraft:oak_log, etc. since every
+12: // placeable block also exists as an item). Keywords below filter
+13: // out technical / creative-only / Education Edition items that
+14: // can't be legitimately obtained in a survival world.
+15: // ---------------------------------------------------------------
+16: const EXCLUDE_KEYWORDS = [
+17:   "chemistry", "compound", "element", "camera", "command_block",
+18:   "structure_", "debug", "border_block", "barrier", "jigsaw",
+19:   "light_block", "reserved", "invisible", "moving_block", "unknown",
+20:   "spawn_egg", "bedrock", "allow", "deny", "client_request_placeholder",
+21:   "the_client_side_ai_predicted", "underwater_tnt", "sea_pickle_air"
+22: ];
+23: 
+24: function prettifyName(shortId) {
+25:   return shortId
+26:     .split("_")
+27:     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+28:     .join(" ");
+29: }
+30: 
+31: const FALLBACK_POOL = [
+32:   { id: "minecraft:diamond", name: "Diamond" },
+33:   { id: "minecraft:emerald", name: "Emerald" },
+34:   { id: "minecraft:iron_ingot", name: "Iron Ingot" },
+35:   { id: "minecraft:gold_ingot", name: "Gold Ingot" },
+36:   { id: "minecraft:copper_ingot", name: "Copper Ingot" },
+37:   { id: "minecraft:netherite_scrap", name: "Netherite Scrap" },
+38:   { id: "minecraft:lapis_lazuli", name: "Lapis Lazuli" },
+39:   { id: "minecraft:redstone", name: "Redstone Dust" },
+40:   { id: "minecraft:amethyst_shard", name: "Amethyst Shard" },
+41:   { id: "minecraft:quartz", name: "Nether Quartz" },
+42:   { id: "minecraft:blaze_rod", name: "Blaze Rod" },
+43:   { id: "minecraft:ender_pearl", name: "Ender Pearl" },
+44:   { id: "minecraft:ender_eye", name: "Eye of Ender" },
+45:   { id: "minecraft:ghast_tear", name: "Ghast Tear" },
+46:   { id: "minecraft:magma_cream", name: "Magma Cream" },
+47:   { id: "minecraft:shulker_shell", name: "Shulker Shell" },
+48:   { id: "minecraft:chorus_fruit", name: "Chorus Fruit" },
+49:   { id: "minecraft:obsidian", name: "Obsidian" },
+50:   { id: "minecraft:glowstone_dust", name: "Glowstone Dust" },
+51:   { id: "minecraft:prismarine_shard", name: "Prismarine Shard" },
+52:   { id: "minecraft:prismarine_crystals", name: "Prismarine Crystals" },
+53:   { id: "minecraft:scute", name: "Turtle Scute" },
+54:   { id: "minecraft:honeycomb", name: "Honeycomb" },
+55:   { id: "minecraft:honey_bottle", name: "Honey Bottle" },
+56:   { id: "minecraft:golden_apple", name: "Golden Apple" },
+57:   { id: "minecraft:golden_carrot", name: "Golden Carrot" },
+58:   { id: "minecraft:cooked_beef", name: "Cooked Beef" },
+59:   { id: "minecraft:cake", name: "Cake" },
+60:   { id: "minecraft:cookie", name: "Cookie" },
+61:   { id: "minecraft:pumpkin_pie", name: "Pumpkin Pie" },
+62:   { id: "minecraft:bone", name: "Bone" },
+63:   { id: "minecraft:string", name: "String" },
+64:   { id: "minecraft:spider_eye", name: "Spider Eye" },
+65:   { id: "minecraft:gunpowder", name: "Gunpowder" },
+66:   { id: "minecraft:feather", name: "Feather" },
+67:   { id: "minecraft:rabbit_hide", name: "Rabbit Hide" },
+68:   { id: "minecraft:rabbit_foot", name: "Rabbit's Foot" },
+69:   { id: "minecraft:slime_ball", name: "Slime Ball" },
+70:   { id: "minecraft:ink_sac", name: "Ink Sac" },
+71:   { id: "minecraft:glow_ink_sac", name: "Glow Ink Sac" },
+72:   { id: "minecraft:phantom_membrane", name: "Phantom Membrane" },
+73:   { id: "minecraft:nautilus_shell", name: "Nautilus Shell" },
+74:   { id: "minecraft:totem_of_undying", name: "Totem of Undying" },
+75:   { id: "minecraft:heart_of_the_sea", name: "Heart of the Sea" },
+76:   { id: "minecraft:book", name: "Book" },
+77:   { id: "minecraft:clock", name: "Clock" },
+78:   { id: "minecraft:compass", name: "Compass" },
+79:   { id: "minecraft:fishing_rod", name: "Fishing Rod" },
+80:   { id: "minecraft:saddle", name: "Saddle" },
+81:   { id: "minecraft:name_tag", name: "Name Tag" },
+82: ];
+83: 
+84: function buildItemPool() {
+85:   const pool = [];
+86:   for (const type of ItemTypes.getAll()) {
+87:     const shortId = type.id.replace("minecraft:", "");
+88:     if (EXCLUDE_KEYWORDS.some((k) => shortId.includes(k))) continue;
+89:     pool.push({ id: type.id, name: prettifyName(shortId) });
+90:   }
+91:   return pool;
+92: }
+93: 
+94: let ITEM_POOL;
+95: let poolLoadError = null;
+96: try {
+97:   ITEM_POOL = buildItemPool();
+98:   if (!ITEM_POOL || ITEM_POOL.length === 0) throw new Error("Pool came back empty");
+99: } catch (e) {
+100:   poolLoadError = e;
+101:   ITEM_POOL = FALLBACK_POOL;
+102: }
+103: console.warn(`[Speedrun Roulette] Loaded ${ITEM_POOL.length} possible objectives.`);
+104: 
+105: // runs.get(playerId) = { itemId, itemName, startCount, startTick, running }
+106: const runs = new Map();
+107: // Player IDs currently mid-spin (between !start and the spin landing).
+108: // Prevents a second !start/!reroll racing the same spin, and lets
+109: // !stop cancel a spin that hasn't landed yet.
+110: const spinningPlayers = new Set();
+111: 
+112: function formatTime(ticks) {
+113:   const totalMs = ticks * 50;
+114:   const minutes = Math.floor(totalMs / 60000);
+115:   const seconds = Math.floor((totalMs % 60000) / 1000);
+116:   const centis = Math.floor((totalMs % 1000) / 10);
+117:   const mm = String(minutes).padStart(2, "0");
+118:   const ss = String(seconds).padStart(2, "0");
+119:   const cc = String(centis).padStart(2, "0");
+120:   return `${mm}:${ss}.${cc}`;
+121: }
+122: 
+123: function pickRandomItem() {
+124:   return ITEM_POOL[Math.floor(Math.random() * ITEM_POOL.length)];
+125: }
+126: 
+127: function getItemCount(player, itemId) {
+128:   const inv = player.getComponent("minecraft:inventory");
+129:   if (!inv || !inv.container) return 0;
+130:   const container = inv.container;
+131:   let count = 0;
+132:   for (let i = 0; i < container.size; i++) {
+133:     const stack = container.getItem(i);
+134:     if (stack && stack.typeId === itemId) count += stack.amount;
+135:   }
+136:   return count;
+137: }
+138: 
+139: function announce(player, item) {
+140:   player.onScreenDisplay.setTitle("Speedrun Roulette", {
+141:     subtitle: `Get: ${item.name}`,
+142:     fadeInDuration: 5,
+143:     stayDuration: 40,
+144:     fadeOutDuration: 10,
+145:   });
+146:   player.sendMessage(
+147:     `§e[Speedrun Roulette] §fYour objective: §b${item.name}§f. Go! Timer has started.`
+148:   );
+149: }
+150: 
+151: function beginRun(player, item) {
+152:   const startCount = getItemCount(player, item.id);
+153:   runs.set(player.id, {
+154:     itemId: item.id,
+155:     itemName: item.name,
+156:     startCount,
+157:     startTick: system.currentTick,
+158:     running: true,
+159:   });
+160:   announce(player, item);
+161: }
+162: 
+163: // Ticks between each flicker of the spin, in order - short gaps at
+164: // first (fast flickering), growing longer toward the end so it
+165: // visibly decelerates like a slot machine before landing on the
+166: // real result. Sums to ~3 seconds total.
+167: const SPIN_STEPS = [1, 1, 2, 2, 3, 3, 4, 5, 6, 8, 10, 14];
+168: 
+169: function spinAndStart(player) {
+170:   if (spinningPlayers.has(player.id)) {
+171:     player.sendMessage("§c[Speedrun Roulette] Already spinning - hang on!");
+172:     return;
+173:   }
+174: 
+175:   const finalItem = pickRandomItem(); // decided now, revealed at the end
+176:   spinningPlayers.add(player.id);
+177:   let i = 0;
+178: 
+179:   function tick() {
+180:     // Cancelled mid-spin (e.g. via !stop) - stop silently, don't start a run.
+181:     if (!spinningPlayers.has(player.id)) return;
+182: 
+183:     if (i >= SPIN_STEPS.length) {
+184:       spinningPlayers.delete(player.id);
+185:       beginRun(player, finalItem);
+186:       return;
+187:     }
+188:     const flash = pickRandomItem();
+189:     try {
+190:       player.onScreenDisplay.setActionBar(`§e🎰 §f${flash.name}`);
+191:       player.playSound("random.click");
+192:     } catch (e) {}
+193:     system.runTimeout(tick, SPIN_STEPS[i]);
+194:     i++;
+195:   }
+196: 
+197:   player.sendMessage("§e[Speedrun Roulette] §fSpinning...");
+198:   tick();
+199: }
+200: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
+
+Created At: 2026-10-21T18:56:56+07:00
+Completed At: 2026-10-21T18:56:56+07:00
+File Path: `file:///c:/Users/User/Downloads/MineCraft/extracted_roulette/scripts/main.js`
+Total Lines: 378
+Total Bytes: 13730
+Showing lines 201 to 378
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+201: function rerollRun(player) {
+202:   if (spinningPlayers.has(player.id)) {
+203:     player.sendMessage("§c[Speedrun Roulette] Still spinning - wait for it to land first.");
+204:     return;
+205:   }
+206: 
+207:   const item = pickRandomItem();
+208:   const existing = runs.get(player.id);
+209:   if (existing && existing.running) {
+210:     existing.itemId = item.id;
+211:     existing.itemName = item.name;
+212:     existing.startCount = getItemCount(player, item.id);
+213:     player.sendMessage(`§e[Speedrun Roulette] §fRerolled! New objective: §b${item.name}`);
+214:   } else {
+215:     player.sendMessage(
+216:       `§e[Speedrun Roulette] §fPicked: §b${item.name}§f. Type §a!start§f or §a/speedrun:start§f to begin the timer.`
+217:     );
+218:     runs.set(player.id, {
+219:       itemId: item.id,
+220:       itemName: item.name,
+221:       startCount: getItemCount(player, item.id),
+222:       startTick: system.currentTick,
+223:       running: false,
+224:     });
+225:   }
+226: }
+227: 
+228: function stopRun(player) {
+229:   if (spinningPlayers.has(player.id)) {
+230:     spinningPlayers.delete(player.id); // next tick() call sees this and self-terminates
+231:     player.sendMessage("§c[Speedrun Roulette] Spin cancelled.");
+232:     return;
+233:   }
+234: 
+235:   const run = runs.get(player.id);
+236:   if (run && run.running) {
+237:     run.running = false;
+238:     player.sendMessage("§c[Speedrun Roulette] Run cancelled.");
+239:   } else {
+240:     player.sendMessage("§c[Speedrun Roulette] No active run to stop.");
+241:   }
+242: }
+243: 
+244: function finishRun(player, run) {
+245:   const elapsed = system.currentTick - run.startTick;
+246:   const timeStr = formatTime(elapsed);
+247:   run.running = false;
+248:   player.onScreenDisplay.setTitle("§aObjective Complete!", {
+249:     subtitle: `§f${run.itemName} in §e${timeStr}`,
+250:     fadeInDuration: 5,
+251:     stayDuration: 60,
+252:     fadeOutDuration: 15,
+253:   });
+254:   player.playSound("random.levelup");
+255:   world.sendMessage(
+256:     `§a[Speedrun Roulette] §f${player.name} obtained §b${run.itemName}§f in §e${timeStr}§f!`
+257:   );
+258: }
+259: 
+260: function pingMessage() {
+261:   return poolLoadError
+262:     ? `§c[Speedrun Roulette] Script is running, but item pool failed to load (${poolLoadError.message}). Using fallback pool of ${ITEM_POOL.length}.`
+263:     : `§a[Speedrun Roulette] Script is running fine. Pool has ${ITEM_POOL.length} items.`;
+264: }
+265: 
+266: // ---------------------------------------------------------------
+267: // Shared dispatcher - both the chat-prefix commands and the real
+268: // slash commands below call this, so the logic only lives in one
+269: // place.
+270: // ---------------------------------------------------------------
+271: function handleCommand(sub, player) {
+272:   switch (sub) {
+273:     case "start":
+274:       spinAndStart(player);
+275:       break;
+276:     case "reroll":
+277:       rerollRun(player);
+278:       break;
+279:     case "stop":
+280:       stopRun(player);
+281:       break;
+282:     case "poolsize":
+283:       player.sendMessage(`§e[Speedrun Roulette] §fCurrent pool has §b${ITEM_POOL.length}§f possible objectives.`);
+284:       break;
+285:     case "ping":
+286:       player.sendMessage(pingMessage());
+287:       break;
+288:     default:
+289:       player.sendMessage(
+290:         "§e[Speedrun Roulette] §f/speedrun:start - spin & start | /speedrun:reroll - repick item | /speedrun:stop - cancel run | /speedrun:poolsize - show pool size"
+291:       );
+292:   }
+293: }
+294: 
+295: // ---------------------------------------------------------------
+296: // Primary interface: real registered slash commands.
+297: //   /speedrun:start  /speedrun:reroll  /speedrun:stop
+298: //   /speedrun:poolsize  /speedrun:ping
+299: // Each registration is individually try/caught so a problem with
+300: // one command can't prevent the others from registering.
+301: // ---------------------------------------------------------------
+302: system.beforeEvents.startup.subscribe(({ customCommandRegistry }) => {
+303:   const base = {
+304:     permissionLevel: CommandPermissionLevel.Any,
+305:     cheatsRequired: false,
+306:   };
+307: 
+308:   const commands = [
+309:     ["speedrun:start", "Spin for a random objective and start the timer."],
+310:     ["speedrun:reroll", "Repick the objective before starting."],
+311:     ["speedrun:stop", "Cancel the current run or spin."],
+312:     ["speedrun:poolsize", "Show how many possible objectives exist."],
+313:     ["speedrun:ping", "Check that the script is running correctly."],
+314:   ];
+315: 
+316:   for (const [name, description] of commands) {
+317:     const sub = name.split(":")[1];
+318:     try {
+319:       customCommandRegistry.registerCommand({ ...base, name, description }, (origin) => {
+320:         const player = origin.sourceEntity;
+321:         system.run(() => {
+322:           if (player) handleCommand(sub, player);
+323:         });
+324:       });
+325:     } catch (e) {
+326:       console.warn(`[Speedrun Roulette] Failed to register ${name}: ${e}`);
+327:     }
+328:   }
+329: });
+330: 
+331: // ---------------------------------------------------------------
+332: // Backup interface: "!start" etc via chat, kept alongside the
+333: // slash commands above as a redundant fallback. Wrapped
+334: // defensively so a problem here can't take down the rest of the
+335: // script either.
+336: // ---------------------------------------------------------------
+337: try {
+338:   world.beforeEvents.chatSend.subscribe((eventData) => {
+339:     const message = eventData.message.trim().toLowerCase();
+340:     if (!["!start", "!reroll", "!stop", "!help", "!poolsize", "!ping"].includes(message)) return;
+341:     eventData.cancel = true;
+342:     const player = eventData.sender;
+343:     const sub = message === "!help" ? "help" : message.slice(1);
+344:     system.run(() => handleCommand(sub, player));
+345:   });
+346: } catch (e) {
+347:   console.warn(`[Speedrun Roulette] Chat command fallback unavailable: ${e}`);
+348: }
+349: 
+350: // ---------------------------------------------------------------
+351: // Main tick loop: updates actionbar timer, checks for completion
+352: // ---------------------------------------------------------------
+353: system.runInterval(() => {
+354:   for (const [playerId, run] of runs) {
+355:     if (!run.running) continue;
+356:     const player = world.getPlayers().find((p) => p.id === playerId);
+357:     if (!player) continue;
+358: 
+359:     const elapsed = system.currentTick - run.startTick;
+360:     player.onScreenDisplay.setActionBar(
+361:       `§b${run.itemName}§f  §7|§f  §e${formatTime(elapsed)}`
+362:     );
+363: 
+364:     const currentCount = getItemCount(player, run.itemId);
+365:     if (currentCount > run.startCount) {
+366:       finishRun(player, run);
+367:     }
+368:   }
+369: }, 1);
+370: 
+371: world.afterEvents.playerSpawn.subscribe((event) => {
+372:   if (event.initialSpawn) {
+373:     event.player.sendMessage(
+374:       "§e[Speedrun Roulette] §fType §a/speedrun:start§f (or §a!start§f) to get a random item objective and begin timing yourself!"
+375:     );
+376:   }
+377: });
+378: 
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

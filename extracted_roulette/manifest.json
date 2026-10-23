@@ -1,0 +1,33 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Speedrun Roulette",
+    "description": "§eจัดทำโดย Peak4567 §7| §bSpeedrun Roulette Addon",
+    "uuid": "dc226d6b-055b-4e24-8e2c-7f76f9b92a99",
+    "version": [1, 2, 2],
+    "min_engine_version": [1, 20, 0]
+  },
+  "modules": [
+    {
+      "type": "script",
+      "language": "javascript",
+      "uuid": "3dba6cb0-83cd-4d14-9e49-82469243e3ca",
+      "entry": "scripts/main.js",
+      "version": [1, 2, 2]
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "2.8.0"
+    },
+    {
+      "module_name": "@minecraft/server-ui",
+      "version": "2.1.0"
+    },
+    {
+      "uuid": "9a3443ea-084c-4fe9-80b9-63f3c3e129f6",
+      "version": [1, 0, 4]
+    }
+  ]
+}

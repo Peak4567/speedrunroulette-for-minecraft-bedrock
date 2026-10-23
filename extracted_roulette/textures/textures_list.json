@@ -1,0 +1,18 @@
+[
+  "textures/ui/back",
+  "textures/ui/back.png",
+  "textures/ui/pause",
+  "textures/ui/pause.png",
+  "textures/ui/play",
+  "textures/ui/play.png",
+  "textures/ui/reroll",
+  "textures/ui/reroll.png",
+  "textures/ui/reset",
+  "textures/ui/reset.png",
+  "textures/ui/settings",
+  "textures/ui/settings.png",
+  "textures/ui/stop",
+  "textures/ui/stop.png",
+  "textures/ui/trophy",
+  "textures/ui/trophy.png"
+]

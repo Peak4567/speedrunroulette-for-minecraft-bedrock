@@ -1,0 +1,17 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "Speedrun Roulette Resources",
+    "description": "§eจัดทำโดย Peak4567 §7| Speedrun Roulette Resources",
+    "uuid": "9a3443ea-084c-4fe9-80b9-63f3c3e129f6",
+    "version": [1, 0, 4],
+    "min_engine_version": [1, 20, 0]
+  },
+  "modules": [
+    {
+      "type": "resources",
+      "uuid": "9260a6ca-617a-4581-aadc-78942ca95780",
+      "version": [1, 0, 3]
+    }
+  ]
+}
