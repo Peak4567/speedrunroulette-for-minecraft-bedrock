@@ -105,6 +105,15 @@ const I18N = {
   en: {
     mainTitle: "§6★ Speedrun Roulette Menu ★",
     welcome: "Welcome to the Speedrun Roulette Control Panel!",
+    welcomeTitle: "§e★ Speedrun Roulette ★",
+    welcomeSubtitle: "§aRight-click Compass or type !menu",
+    welcomeBanner: "§6══════════════════════════════════════════\n" +
+                   "§e★ Welcome to Speedrun Roulette! ★\n" +
+                   "§fRace against friends or the clock to find randomized items!\n" +
+                   "§7• Right-click your §eCompass §7or type §a!menu §7to open the Menu\n" +
+                   "§7• Type §a!start §7to begin or §a!help §7for all commands\n" +
+                   "§dCreated by Peak4567\n" +
+                   "§6══════════════════════════════════════════",
     credits: "§dCreated by: §e§lPeak4567§r",
     statusLabel: "Status",
     statusIdle: "§7Idle",
@@ -140,64 +149,38 @@ const I18N = {
     btnBackMain: "§c🔙 Back to Main Menu",
 
     configTitle: "§6⚙ Speedrun Roulette Settings",
-    configBodyIntro: "Customize match rules and options:
-",
+    configBodyIntro: "Customize match rules and options:\n",
     configPrompt: "§7Tap any option below to change:",
-    btnDimSetting: "§3🌐 Target Dimension
-§7[{value}]",
-    btnItemDiffSetting: "§a🎯 Item Difficulty
-§7[{value}]",
-    btnModeToggle: "§e⏱ Toggle Timer Mode
-§7[{value}]",
-    btnRoundsSetting: "§b🎯 Match Rounds
-§7[{value}]",
-    btnMultiplierSetting: "§a⚡ Time Multiplier
-§7[{value}]",
-    btnWorldTimeSetting: "§6☀️ World Time
-§7[{value}]",
-    btnMobDiffSetting: "§d👾 Mob Difficulty
-§7[{value}]",
-    btnSuddenDeathSetting: "§c💀 Sudden Death
-§7[{value}]",
-    btnLanguageSetting: "§e🌐 Language
-§7[{value}]",
+    btnDimSetting: "§3🌐 Target Dimension\n§7[{value}]",
+    btnItemDiffSetting: "§a🎯 Item Difficulty\n§7[{value}]",
+    btnModeToggle: "§e⏱ Toggle Timer Mode\n§7[{value}]",
+    btnRoundsSetting: "§b🎯 Match Rounds\n§7[{value}]",
+    btnMultiplierSetting: "§a⚡ Time Multiplier\n§7[{value}]",
+    btnWorldTimeSetting: "§6☀️ World Time\n§7[{value}]",
+    btnMobDiffSetting: "§d👾 Mob Difficulty\n§7[{value}]",
+    btnSuddenDeathSetting: "§c💀 Sudden Death\n§7[{value}]",
+    btnLanguageSetting: "§e🌐 Language\n§7[{value}]",
 
     dimTitle: "§6🌐 Select Target Dimension",
-    dimBody: "§fCurrent Dimension: §b{current}
-
-" +
-             "§7Players ALWAYS start in the Overworld and journey to the destination to find the objective:
-" +
-             "§f• §aOverworld: §7Items found in the Overworld (Grass, Wood, Coal, Ores, Animals, Plants)
-" +
-             "§f• §cNether: §7Start in Overworld, gather materials & journey to Nether (Blaze Rod, Quartz, Netherite)
-" +
-             "§f• §dThe End: §7Start in Overworld, find stronghold & travel to The End (End Stone, Chorus, Shulker Shell)
-" +
+    dimBody: "§fCurrent Dimension: §b{current}\n\n" +
+             "§7Players ALWAYS start in the Overworld and journey to the destination to find the objective:\n" +
+             "§f• §aOverworld: §7Items found in the Overworld (Grass, Wood, Coal, Ores, Animals, Plants)\n" +
+             "§f• §cNether: §7Start in Overworld, gather materials & journey to Nether (Blaze Rod, Quartz, Netherite)\n" +
+             "§f• §dThe End: §7Start in Overworld, find stronghold & travel to The End (End Stone, Chorus, Shulker Shell)\n" +
              "§f• §eAll Dimensions: §7Any item across Overworld, Nether, and The End!",
     
     diffTitle: "§6🎯 Item Hunting Difficulty",
-    diffBody: "§fCurrent Difficulty: §b{current}
-
-" +
-              "§7Select the objective difficulty tier to roll:
-" +
-              "§f• §aVery Easy: §7Around you: Dirt, Sand, Wood, Grass, Seeds, Flowers (45-90 sec)
-" +
-              "§f• §2Easy: §7Coal, Food, Stone tools, Basic ores, Furnaces (2-4 min)
-" +
-              "§f• §eMedium: §7Iron, Gold, Iron gear, Bows, Shields, Buckets (5-10 min)
-" +
-              "§f• §6Hard: §7Diamonds, Obsidian, Lava, Nether ores, Deepslate (15-30 min)
-" +
-              "§f• §cExtreme: §7Netherite, Dragon realm, Sculk, Shulker Boxes (1-2 hours)
-" +
+    diffBody: "§fCurrent Difficulty: §b{current}\n\n" +
+              "§7Select the objective difficulty tier to roll:\n" +
+              "§f• §aVery Easy: §7Around you: Dirt, Sand, Wood, Grass, Seeds, Flowers (45-90 sec)\n" +
+              "§f• §2Easy: §7Coal, Food, Stone tools, Basic ores, Furnaces (2-4 min)\n" +
+              "§f• §eMedium: §7Iron, Gold, Iron gear, Bows, Shields, Buckets (5-10 min)\n" +
+              "§f• §6Hard: §7Diamonds, Obsidian, Lava, Nether ores, Deepslate (15-30 min)\n" +
+              "§f• §cExtreme: §7Netherite, Dragon realm, Sculk, Shulker Boxes (1-2 hours)\n" +
               "§f• §dAll Difficulties: §7Mix of all difficulty tiers!",
 
     langTitle: "§6🌐 Select Language",
-    langBody: "§fCurrent Language: §b{current}
-
-§7Choose your preferred language for menus, broadcasts, and notifications:",
+    langBody: "§fCurrent Language: §b{current}\n\n§7Choose your preferred language for menus, broadcasts, and notifications:",
     langChanged: "§a[Speedrun Roulette] §fLanguage changed to: §e{name}",
 
     timeUpNobodyFound: "Nobody found the item in time this round!",
@@ -206,6 +189,15 @@ const I18N = {
   th: {
     mainTitle: "§6★ Speedrun Roulette Menu ★",
     welcome: "ยินดีต้อนรับสู่แผงควบคุม Speedrun Roulette!",
+    welcomeTitle: "§e★ Speedrun Roulette ★",
+    welcomeSubtitle: "§aคลิกขวาเข็มทิศ หรือพิมพ์ !menu",
+    welcomeBanner: "§6══════════════════════════════════════════\n" +
+                   "§e★ ยินดีต้อนรับสู่ Speedrun Roulette! ★\n" +
+                   "§fแข่งกันตามหาไอเท็มที่สุ่มขึ้นมาให้เร็วที่สุด!\n" +
+                   "§7• คลิกขวาที่ §eเข็มทิศ §7หรือพิมพ์ §a!menu §7เพื่อเปิดเมนู\n" +
+                   "§7• พิมพ์ §a!start §7เพื่อเริ่มเกม หรือ §a!help §7ดูคำสั่งทั้งหมด\n" +
+                   "§dจัดทำโดย Peak4567\n" +
+                   "§6══════════════════════════════════════════",
     credits: "§dจัดทำโดย: §e§lPeak4567§r",
     statusLabel: "สถานะ",
     statusIdle: "§7หยุดพัก (Idle)",
@@ -241,64 +233,38 @@ const I18N = {
     btnBackMain: "§c🔙 กลับสู่เมนูหลัก (Back)",
 
     configTitle: "§6⚙ ตั้งค่า Speedrun Roulette",
-    configBodyIntro: "ปรับแต่งการตั้งค่าการแข่งขัน:
-",
+    configBodyIntro: "ปรับแต่งการตั้งค่าการแข่งขัน:\n",
     configPrompt: "§7แตะที่ปุ่มด้านล่างเพื่อปรับเปลี่ยน:",
-    btnDimSetting: "§3🌐 มิติเป้าหมาย (Dimension)
-§7[{value}]",
-    btnItemDiffSetting: "§a🎯 ความยากการหาของ
-§7[{value}]",
-    btnModeToggle: "§e⏱ สลับโหมดเวลา
-§7[{value}]",
-    btnRoundsSetting: "§b🎯 เลือกจำนวนตา (Rounds)
-§7[{value}]",
-    btnMultiplierSetting: "§a⚡ ปรับตัวคูณเวลา
-§7[{value}]",
-    btnWorldTimeSetting: "§6☀️ เวลาในเกม (World Time)
-§7[{value}]",
-    btnMobDiffSetting: "§d👾 ความยากมอนสเตอร์
-§7[{value}]",
-    btnSuddenDeathSetting: "§c💀 โหมดครั้งเดียวตาย
-§7[{value}]",
-    btnLanguageSetting: "§e🌐 เปลี่ยนภาษา (Language)
-§7[{value}]",
+    btnDimSetting: "§3🌐 มิติเป้าหมาย (Dimension)\n§7[{value}]",
+    btnItemDiffSetting: "§a🎯 ความยากการหาของ\n§7[{value}]",
+    btnModeToggle: "§e⏱ สลับโหมดเวลา\n§7[{value}]",
+    btnRoundsSetting: "§b🎯 เลือกจำนวนตา (Rounds)\n§7[{value}]",
+    btnMultiplierSetting: "§a⚡ ปรับตัวคูณเวลา\n§7[{value}]",
+    btnWorldTimeSetting: "§6☀️ เวลาในเกม (World Time)\n§7[{value}]",
+    btnMobDiffSetting: "§d👾 ความยากมอนสเตอร์\n§7[{value}]",
+    btnSuddenDeathSetting: "§c💀 โหมดครั้งเดียวตาย\n§7[{value}]",
+    btnLanguageSetting: "§e🌐 เปลี่ยนภาษา (Language)\n§7[{value}]",
 
     dimTitle: "§6🌐 เลือกมิติเป้าหมาย (Dimension Mode)",
-    dimBody: "§fมิติปัจจุบัน: §b{current}
-
-" +
-             "§7ผู้เล่นจะเริ่มที่โลกปกติ (Overworld) เสมอ และต้องหาของเพื่อเดินทางไปสู่มิติเป้าหมาย:
-" +
-             "§f• §aโลกปกติ: §7สุ่มเฉพาะไอเท็ม Overworld (ต้นหญ้า ไม้ ถ่าน แร่ ดิน ดอกไม้ สัตว์)
-" +
-             "§f• §cนรก: §7เริ่มที่โลกปกติ หาของและสร้างประตูสู่นรกเพื่อหาไอเท็ม (Blaze Rod, Quartz, Netherite ฯลฯ)
-" +
-             "§f• §dมิติมังกร: §7เริ่มที่โลกปกติ หาของและเดินทางสู่ The End เพื่อหาไอเท็ม (End Stone, Chorus, Shulker ฯลฯ)
-" +
+    dimBody: "§fมิติปัจจุบัน: §b{current}\n\n" +
+             "§7ผู้เล่นจะเริ่มที่โลกปกติ (Overworld) เสมอ และต้องหาของเพื่อเดินทางไปสู่มิติเป้าหมาย:\n" +
+             "§f• §aโลกปกติ: §7สุ่มเฉพาะไอเท็ม Overworld (ต้นหญ้า ไม้ ถ่าน แร่ ดิน ดอกไม้ สัตว์)\n" +
+             "§f• §cนรก: §7เริ่มที่โลกปกติ หาของและสร้างประตูสู่นรกเพื่อหาไอเท็ม (Blaze Rod, Quartz, Netherite ฯลฯ)\n" +
+             "§f• §dมิติมังกร: §7เริ่มที่โลกปกติ หาของและเดินทางสู่ The End เพื่อหาไอเท็ม (End Stone, Chorus, Shulker ฯลฯ)\n" +
              "§f• §eรวมทุกมิติ: §7สุ่มได้ทุกอย่างใน Minecraft!",
 
     diffTitle: "§6🎯 ระดับความยากการหาของ",
-    diffBody: "§fระดับปัจจุบัน: §b{current}
-
-" +
-              "§7เลือกระดับความยากของไอเท็มที่ต้องการให้ระบบสุ่ม:
-" +
-              "§f• §aง่ายมาก: §7ของรอบตัว ดิน ทราย ไม้ หญ้า พืช ดอกไม้ (45-90 วินาที)
-" +
-              "§f• §2ง่าย: §7ถ่าน อาหาร อุปกรณ์หิน แร่เบื้องต้น เตาเผา (2-4 นาที)
-" +
-              "§f• §eกลาง: §7เหล็ก ทอง อุปกรณ์เหล็ก ธนู โล่ ถังน้ำ (5-10 นาที)
-" +
-              "§f• §6ยาก: §7เพชร ออบซิเดียน ลาวา แร่เนเธอร์ ชั้นหินลึก (15-30 นาที)
-" +
-              "§f• §cยากมาก: §7เนเธอไรต์ มิติมังกร สกัลก์ กล่องชัลเกอร์ (1-2 ชั่วโมง)
-" +
+    diffBody: "§fระดับปัจจุบัน: §b{current}\n\n" +
+              "§7เลือกระดับความยากของไอเท็มที่ต้องการให้ระบบสุ่ม:\n" +
+              "§f• §aง่ายมาก: §7ของรอบตัว ดิน ทราย ไม้ หญ้า พืช ดอกไม้ (45-90 วินาที)\n" +
+              "§f• §2ง่าย: §7ถ่าน อาหาร อุปกรณ์หิน แร่เบื้องต้น เตาเผา (2-4 นาที)\n" +
+              "§f• §eกลาง: §7เหล็ก ทอง อุปกรณ์เหล็ก ธนู โล่ ถังน้ำ (5-10 นาที)\n" +
+              "§f• §6ยาก: §7เพชร ออบซิเดียน ลาวา แร่เนเธอร์ ชั้นหินลึก (15-30 นาที)\n" +
+              "§f• §cยากมาก: §7เนเธอไรต์ มิติมังกร สกัลก์ กล่องชัลเกอร์ (1-2 ชั่วโมง)\n" +
               "§f• §dรวมทุกระดับ: §7สุ่มผสมทุกระดับความยาก!",
 
     langTitle: "§6🌐 เลือกภาษา / Select Language",
-    langBody: "§fภาษาปัจจุบัน: §b{current}
-
-§7เลือกภาษาสำหรับแสดงผลในเมนูและข้อความแจ้งเตือน:",
+    langBody: "§fภาษาปัจจุบัน: §b{current}\n\n§7เลือกภาษาสำหรับแสดงผลในเมนูและข้อความแจ้งเตือน:",
     langChanged: "§a[Speedrun Roulette] §fเปลี่ยนภาษาเป็น: §e{name}",
 
     timeUpNobodyFound: "ไม่มีใครหาของทันในตานี้!",
@@ -1075,7 +1041,6 @@ function teleportPlayersToRandomLocation(players) {
     try {
       p.addEffect("resistance", 600, { amplifier: 255, showParticles: false });
       p.addEffect("fire_resistance", 600, { amplifier: 0, showParticles: false });
-      p.addEffect("slow_falling", 300, { amplifier: 0, showParticles: false });
       p.addEffect("darkness", 80, { amplifier: 0, showParticles: false });
       p.runCommandAsync("camera @s fade time 0.3 3.5 0.5 color 10 10 15");
     } catch (e) {}
@@ -1140,7 +1105,6 @@ function teleportSinglePlayerToRandomLocation(p) {
   try {
     p.addEffect("resistance", 400, { amplifier: 255, showParticles: false });
     p.addEffect("fire_resistance", 400, { amplifier: 0, showParticles: false });
-    p.addEffect("slow_falling", 200, { amplifier: 0, showParticles: false });
     p.addEffect("darkness", 60, { amplifier: 0, showParticles: false });
     p.runCommandAsync("camera @s fade time 0.2 1.5 0.3 color 15 15 20");
   } catch (e) {}
@@ -1781,7 +1745,6 @@ function pauseGame(initiator = null) {
   state.pausedElapsedTicks = system.currentTick - state.startTick;
   state.roundState = "paused";
 
-  const isEn = !state || state.language !== "th";
   const who = initiator ? initiator.name : (isEn ? "Host" : "ผู้ดูแล");
   world.sendMessage("§6══════════════════════════════════════════");
   if (isEn) {
@@ -1816,7 +1779,6 @@ function resumeGame(initiator = null) {
   state.startTick = system.currentTick - (state.pausedElapsedTicks || 0);
   state.roundState = "running";
 
-  const isEn = !state || state.language !== "th";
   const who = initiator ? initiator.name : (isEn ? "Host" : "ผู้ดูแล");
   world.sendMessage("§6══════════════════════════════════════════");
   if (isEn) {
@@ -2213,7 +2175,7 @@ function openConfigMenu(player) {
     form.button(t("btnMobDiffSetting", { value: diffStr }), "textures/items/iron_sword");
     form.button(t("btnSuddenDeathSetting", { value: state.suddenDeath ? (isEn ? "ON: Spectator" : "เปิด: Spectator") : (isEn ? "OFF: Normal" : "ปิด: ธรรมดา") }), "textures/items/totem");
     form.button(t("btnLanguageSetting", { value: langStr }), "textures/items/book_writable");
-    form.button(t("btnBackMain"), "textures/ui/cancel");
+    form.button(t("btnBackMain"), "textures/ui/back");
 
     showFormSafely(player, form, (response) => {
       const sel = response.selection;
@@ -2288,7 +2250,7 @@ function openDimensionMenu(player) {
 §7${opt.desc}`, opt.icon || "textures/items/compass_item");
     }
     // High contrast Red Back Button
-    form.button(t("btnBack"), "textures/ui/cancel");
+    form.button(t("btnBack"), "textures/ui/back");
 
     showFormSafely(player, form, (response) => {
       const sel = response.selection;
@@ -2323,7 +2285,7 @@ function openItemDifficultyMenu(player) {
 §7${opt.desc}`, opt.icon || "textures/items/diamond");
     }
     // High contrast Red Back Button
-    form.button(t("btnBack"), "textures/ui/cancel");
+    form.button(t("btnBack"), "textures/ui/back");
 
     showFormSafely(player, form, (response) => {
       const sel = response.selection;
@@ -2358,7 +2320,7 @@ function openLanguageMenu(player) {
 §7Set all menus, timers, and messages to English`, "textures/items/book_normal");
     form.button(`${isThCur}🇹🇭 ภาษาไทย (Thai)
 §7เปลี่ยนเมนู ตัวจับเวลา และข้อความทั้งหมดเป็นภาษาไทย`, "textures/items/book_writable");
-    form.button(t("btnBack"), "textures/ui/cancel");
+    form.button(t("btnBack"), "textures/ui/back");
 
     showFormSafely(player, form, (response) => {
       const sel = response.selection;
@@ -2398,7 +2360,7 @@ function openTimeModeMenu(player) {
       form.button(`${isCur}${opt.label}
 §7${opt.desc}`, opt.icon || "textures/items/clock_item");
     }
-    form.button(t("btnBack"), "textures/ui/cancel");
+    form.button(t("btnBack"), "textures/ui/back");
 
     showFormSafely(player, form, (response) => {
       const sel = response.selection;
@@ -2439,7 +2401,7 @@ function openDifficultyMenu(player) {
       form.button(`${isCur}${opt.label}
 §7${opt.desc}`, opt.icon || "textures/items/iron_sword");
     }
-    form.button(t("btnBack"), "textures/ui/cancel");
+    form.button(t("btnBack"), "textures/ui/back");
 
     showFormSafely(player, form, (response) => {
       const sel = response.selection;
@@ -2482,7 +2444,7 @@ function openRoundsSelectMenu(player) {
       const isCur = opt.value === state.totalRounds ? "§a✔ " : "";
       form.button(`${isCur}${opt.label}`, "textures/items/gold_ingot");
     }
-    form.button(t("btnBack"), "textures/ui/cancel");
+    form.button(t("btnBack"), "textures/ui/back");
 
     showFormSafely(player, form, (response) => {
       const sel = response.selection;
@@ -2523,7 +2485,7 @@ function openMultiplierSelectMenu(player) {
       const isCur = Math.abs(opt.value - state.timeMultiplier) < 0.05 ? "§a✔ " : "";
       form.button(`${isCur}${opt.label}`, "textures/items/sugar");
     }
-    form.button(t("btnBack"), "textures/ui/cancel");
+    form.button(t("btnBack"), "textures/ui/back");
 
     showFormSafely(player, form, (response) => {
       const sel = response.selection;
@@ -3360,6 +3322,8 @@ world.afterEvents.itemUse.subscribe((event) => {
 // ---------------------------------------------------------------
 world.afterEvents.playerSpawn.subscribe((event) => {
   const p = event.player;
+  if (!p) return;
+
   if (state.roundState === "idle") {
     giveMenuCompass(p);
   } else {
@@ -3371,11 +3335,31 @@ world.afterEvents.playerSpawn.subscribe((event) => {
       applyLobbyEnvironment();
       // When game is idle, teleport rejoining players to spawn, cancel bed spawn, and restore health/hunger
       system.runTimeout(() => {
-        teleportSinglePlayerToWorldSpawn(p);
-        restorePlayerHealthAndHunger(p);
+        try {
+          if (!p.isValid()) return;
+          teleportSinglePlayerToWorldSpawn(p);
+          restorePlayerHealthAndHunger(p);
+        } catch (e) {}
       }, 5);
     }
-    p.sendMessage(t("welcomeMessage"));
+
+    // Deliver welcome greeting after world loading completes
+    system.runTimeout(() => {
+      try {
+        if (!p.isValid()) return;
+        p.sendMessage(t("welcomeBanner"));
+        p.onScreenDisplay.setTitle(t("welcomeTitle"), {
+          subtitle: t("welcomeSubtitle"),
+          fadeInDuration: 10,
+          stayDuration: 70,
+          fadeOutDuration: 20,
+        });
+        p.playSound("random.orb", { pitch: 1.0, volume: 1.0 });
+        if (state.roundState === "idle") {
+          giveMenuCompass(p);
+        }
+      } catch (e) {}
+    }, 20);
   } else {
     // Player respawn handling after death
     if ((state.roundState === "running" || state.roundState === "countdown321") && !state.suddenDeath) {

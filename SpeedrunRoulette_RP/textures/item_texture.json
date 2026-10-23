@@ -5,6 +5,9 @@
     "speedrun_back": {
       "textures": "textures/ui/back"
     },
+    "speedrun_cancel": {
+      "textures": "textures/ui/cancel"
+    },
     "speedrun_pause": {
       "textures": "textures/ui/pause"
     },
@@ -25,6 +28,87 @@
     },
     "speedrun_trophy": {
       "textures": "textures/ui/trophy"
+    },
+    "speedrun_apple": {
+      "textures": "textures/items/apple"
+    },
+    "speedrun_blaze_rod": {
+      "textures": "textures/items/blaze_rod"
+    },
+    "speedrun_book": {
+      "textures": "textures/items/book"
+    },
+    "speedrun_book_normal": {
+      "textures": "textures/items/book_normal"
+    },
+    "speedrun_book_writable": {
+      "textures": "textures/items/book_writable"
+    },
+    "speedrun_bread": {
+      "textures": "textures/items/bread"
+    },
+    "speedrun_clock": {
+      "textures": "textures/items/clock"
+    },
+    "speedrun_clock_item": {
+      "textures": "textures/items/clock_item"
+    },
+    "speedrun_coal": {
+      "textures": "textures/items/coal"
+    },
+    "speedrun_compass": {
+      "textures": "textures/items/compass"
+    },
+    "speedrun_compass_item": {
+      "textures": "textures/items/compass_item"
+    },
+    "speedrun_diamond": {
+      "textures": "textures/items/diamond"
+    },
+    "speedrun_diamond_sword": {
+      "textures": "textures/items/diamond_sword"
+    },
+    "speedrun_emerald": {
+      "textures": "textures/items/emerald"
+    },
+    "speedrun_ender_eye": {
+      "textures": "textures/items/ender_eye"
+    },
+    "speedrun_ender_pearl": {
+      "textures": "textures/items/ender_pearl"
+    },
+    "speedrun_glowstone_dust": {
+      "textures": "textures/items/glowstone_dust"
+    },
+    "speedrun_gold_ingot": {
+      "textures": "textures/items/gold_ingot"
+    },
+    "speedrun_iron_ingot": {
+      "textures": "textures/items/iron_ingot"
+    },
+    "speedrun_iron_sword": {
+      "textures": "textures/items/iron_sword"
+    },
+    "speedrun_netherite_ingot": {
+      "textures": "textures/items/netherite_ingot"
+    },
+    "speedrun_sugar": {
+      "textures": "textures/items/sugar"
+    },
+    "speedrun_totem": {
+      "textures": "textures/items/totem"
+    },
+    "speedrun_totem_of_undying": {
+      "textures": "textures/items/totem_of_undying"
+    },
+    "speedrun_wheat_seeds": {
+      "textures": "textures/items/wheat_seeds"
+    },
+    "speedrun_wooden_sword": {
+      "textures": "textures/items/wooden_sword"
+    },
+    "speedrun_writable_book": {
+      "textures": "textures/items/writable_book"
     }
   }
 }
